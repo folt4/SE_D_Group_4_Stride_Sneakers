@@ -1,8 +1,0 @@
-# OS / Editor
-.DS_Store
-Thumbs.db
-.vscode/
-
-# Build / Deployment archives
-*.zip
-Stride-Sneaker_2/
