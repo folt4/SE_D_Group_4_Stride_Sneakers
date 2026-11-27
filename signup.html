@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account — STRIDE Marketplace</title>
+  <meta name="description" content="Register for a STRIDE collector account to unlock member-only shock drops, 24-hour consignment payouts, and verified authentication certificates.">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo-mark.svg">
+  <link rel="stylesheet" href="../css/stride.css">
+  <style>
+    .strength-meter {
+      height: 4px;
+      background: #292D38;
+      border-radius: 99px;
+      margin-top: 0.5rem;
+      overflow: hidden;
+    }
+    .strength-bar {
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s ease, background-color 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="stride-header">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../index.html" class="brand-logo" aria-label="STRIDE Home">
+          <img src="../assets/logo.svg" alt="STRIDE — Be Your Own" width="160" height="40">
+        </a>
+
+        <nav class="nav-links">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="sell.html" class="nav-link">Sell Your Sneakers</a>
+          <a href="about.html" class="nav-link">About</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-secondary btn-sm">Sign In</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sign Up Form Wrapper -->
+  <div class="auth-wrapper">
+    <div class="auth-card" style="max-width: 520px;">
+      <div class="auth-header">
+        <img src="../assets/logo-mark.svg" alt="STRIDE Mark" width="46" height="46" style="margin: 0 auto 1.25rem;">
+        <h1>JOIN <span class="text-neon">STRIDE</span></h1>
+        <p style="font-size: 0.9rem; color: #A0A4AE;">Create your account to unlock verified drops and buyer protection.</p>
+      </div>
+
+      <form id="signup-form" novalidate>
+        <div class="form-group" style="margin-bottom: 1.25rem;">
+          <label class="form-label" for="signup-name">Full Name *</label>
+          <input type="text" id="signup-name" class="form-input" placeholder="e.g. Elena Rostova" required>
+          <span class="form-error-msg">Please enter your full name.</span>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.25rem;">
+          <label class="form-label" for="signup-email">Email Address *</label>
+          <input type="email" id="signup-email" class="form-input" placeholder="elena@example.com" required>
+          <span class="form-error-msg">Please enter a valid email address.</span>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.25rem;">
+          <label class="form-label" for="signup-password">Create Password *</label>
+          <input type="password" id="signup-password" class="form-input" placeholder="Minimum 8 characters" required>
+          <div class="strength-meter">
+            <div class="strength-bar" id="strength-bar"></div>
+          </div>
+          <span class="form-error-msg">Password must be at least 8 characters.</span>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.5rem;">
+          <label class="form-label" for="signup-confirm-password">Confirm Password *</label>
+          <input type="password" id="signup-confirm-password" class="form-input" placeholder="Re-enter password" required>
+          <span class="form-error-msg" id="confirm-error-msg">Passwords do not match.</span>
+        </div>
+
+        <div style="margin-bottom: 1.75rem;">
+          <label style="display: flex; align-items: flex-start; gap: 0.65rem; font-size: 0.82rem; color: #A0A4AE; cursor: pointer; line-height: 1.5;">
+            <input type="checkbox" id="terms-agree" required style="accent-color: #FF5A1F; margin-top: 3px;">
+            <span>I agree to the <a href="faq.html" style="color: #FF5A1F;">STRIDE Terms of Service</a> and verify my compliance with consignment policies.</span>
+          </label>
+          <span class="form-error-msg" id="terms-error-msg" style="margin-top: 0.4rem;">You must accept the terms to proceed.</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-bottom: 1.25rem;">
+          CREATE COLLECTOR ACCOUNT
+        </button>
+      </form>
+
+      <!-- Success Confirmation View -->
+      <div id="signup-success-view" style="display: none; text-align: center; padding: 2rem 0;">
+        <div style="width: 60px; height: 60px; border-radius: 50%; background: rgba(255, 90, 31, 0.15); border: 2px solid #FF5A1F; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF5A1F" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3 style="font-size: 1.4rem; color: #FFFFFF; margin-bottom: 0.5rem;">Account Initialized!</h3>
+        <p style="font-size: 0.9rem; color: #A0A4AE; margin-bottom: 1.5rem;">Welcome to STRIDE. You are now logged in as a verified member.</p>
+        <a href="shop.html" class="btn btn-primary btn-block">Explore Grails</a>
+      </div>
+
+      <div style="text-align: center; border-top: 1px solid #292D38; padding-top: 1.5rem; font-size: 0.88rem; color: #A0A4AE;">
+        Already registered? <a href="login.html" style="color: #FF5A1F; font-weight: 700;">Sign in to account →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="stride-footer" style="padding: 2.5rem 0;">
+    <div class="container text-center" style="font-size: 0.82rem; color: #626775;">
+      &copy; 2026 STRIDE Marketplace Inc. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/stride-data.js"></script>
+  <script src="../js/stride-core.js"></script>
+
+  <script>
+    const pwdInput = document.getElementById('signup-password');
+    const strengthBar = document.getElementById('strength-bar');
+
+    // Dynamic Password Strength Meter
+    pwdInput.addEventListener('input', () => {
+      const val = pwdInput.value;
+      let score = 0;
+      if (val.length >= 8) score += 33;
+      if (/[A-Z]/.test(val) && /[0-9]/.test(val)) score += 34;
+      if (/[^A-Za-z0-9]/.test(val)) score += 33;
+
+      strengthBar.style.width = `${score}%`;
+      if (score < 40) strengthBar.style.backgroundColor = '#EF4444';
+      else if (score < 70) strengthBar.style.backgroundColor = '#F59E0B';
+      else strengthBar.style.backgroundColor = '#10B981';
+    });
+
+    // Form Validation & Registration
+    document.getElementById('signup-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let valid = true;
+
+      const name = document.getElementById('signup-name');
+      const email = document.getElementById('signup-email');
+      const pwd = document.getElementById('signup-password');
+      const confirmPwd = document.getElementById('signup-confirm-password');
+      const terms = document.getElementById('terms-agree');
+      const confirmError = document.getElementById('confirm-error-msg');
+      const termsError = document.getElementById('terms-error-msg');
+
+      if (!name.value.trim()) { name.parentElement.classList.add('error'); valid = false; }
+      else { name.parentElement.classList.remove('error'); }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email.value.trim())) { email.parentElement.classList.add('error'); valid = false; }
+      else { email.parentElement.classList.remove('error'); }
+
+      if (pwd.value.length < 8) { pwd.closest('.form-group').classList.add('error'); valid = false; }
+      else { pwd.closest('.form-group').classList.remove('error'); }
+
+      if (pwd.value !== confirmPwd.value) {
+        confirmError.style.display = 'block';
+        confirmPwd.style.borderColor = '#EF4444';
+        valid = false;
+      } else {
+        confirmError.style.display = 'none';
+        confirmPwd.style.borderColor = '';
+      }
+
+      if (!terms.checked) {
+        termsError.style.display = 'block';
+        valid = false;
+      } else {
+        termsError.style.display = 'none';
+      }
+
+      if (valid) {
+        localStorage.setItem('stride_user', JSON.stringify({
+          name: name.value.trim(),
+          email: email.value.trim(),
+          role: 'Member'
+        }));
+        this.style.display = 'none';
+        document.getElementById('signup-success-view').style.display = 'block';
+        STRIDE_APP.showToast('Account successfully created! Welcome.', 'success');
+      }
+    });
+  </script>
+</body>
+</html>
