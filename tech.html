@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STRIDE — Biomechanics, Propulsion & Technology Lab</title>
+  <link rel="stylesheet" href="css/stride.css">
+  <style>
+    .tech-hero {
+      padding: 5rem 0 3rem 0;
+      background: radial-gradient(circle at 70% 30%, rgba(0,255,135,0.08) 0%, transparent 60%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .tech-deep-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 3.5rem;
+      margin-bottom: 3.5rem;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .tech-deep-card.reverse {
+      grid-template-columns: 0.9fr 1.1fr;
+    }
+    .benchmark-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+      font-size: 0.88rem;
+    }
+    .benchmark-table th, .benchmark-table td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid var(--border-subtle);
+      text-align: left;
+    }
+    .benchmark-table th {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+    }
+    @media (max-width: 900px) {
+      .tech-deep-card, .tech-deep-card.reverse {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    ⚡ <strong>STRIDE PROPULSION LAB:</strong> 87.4% MEASURED ENERGY REBOUND &bull; ZURICH BIOMECHANICS CERTIFIED
+  </div>
+
+  <!-- Header -->
+  <header class="stride-header">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="brand-logo">
+          <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          STRIDE
+        </a>
+
+        <nav class="nav-links">
+          <a href="shop.html" class="nav-link">SHOP</a>
+          <a href="drops.html" class="nav-link">DROPS</a>
+          <a href="customizer.html" class="nav-link">CUSTOMIZER <span class="dropdown-badge">3D</span></a>
+          <a href="lookbook.html" class="nav-link">LOOKBOOK</a>
+          <a href="tech.html" class="nav-link active">INNOVATION</a>
+          <a href="sustainability.html" class="nav-link">PLANET STRIDE</a>
+          <div class="nav-item">
+            <a href="#" class="nav-link">MORE <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
+            <div class="dropdown-menu">
+              <a href="collaborations.html" class="dropdown-link"><span>Athletes & Collabs</span> <span class="dropdown-badge">PRO</span></a>
+              <a href="about.html" class="dropdown-link"><span>About Brand</span></a>
+              <a href="stores.html" class="dropdown-link"><span>Store Locator</span></a>
+              <a href="size-guide.html" class="dropdown-link"><span>Size Calculator</span></a>
+              <a href="journal.html" class="dropdown-link"><span>The Journal</span></a>
+              <a href="track-order.html" class="dropdown-link"><span>Track Order</span></a>
+              <a href="faq.html" class="dropdown-link"><span>FAQ & Support</span></a>
+              <a href="contact.html" class="dropdown-link"><span>VIP Concierge</span></a>
+            </div>
+          </div>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-btn trigger-search" aria-label="Search">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+          <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span class="badge-count wishlist-badge-count" style="display:none;">0</span>
+          </a>
+          <button class="icon-btn trigger-cart" aria-label="Shopping Bag">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span class="badge-count cart-badge-count" style="display:none;">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- TECH HERO -->
+  <section class="tech-hero">
+    <div class="container">
+      <span class="chip chip-neon" style="margin-bottom: 0.8rem;">BIOMECHANICS RESEARCH & DEVELOPMENT</span>
+      <h1 style="font-size: 3.4rem; margin-bottom: 1rem;">WHERE SCIENCE MEETS STRIDE</h1>
+      <p style="color: var(--text-secondary); max-width: 680px; font-size: 1.1rem;">
+        Footwear shouldn't just absorb force — it should capture and amplify kinetic energy. Our Zurich engineering facility uses high-speed 3D gait motion capture, wind tunnels, and nitrogen autoclave molding to build shoes that propel human potential.
+      </p>
+    </div>
+  </section>
+
+  <!-- CORE BREAKTHROUGHS -->
+  <section class="section-padding">
+    <div class="container">
+
+      <!-- BREAKTHROUGH 1: AEROFOAM -->
+      <div class="tech-deep-card" id="aerofoam">
+        <div>
+          <span class="section-tag">// BREAKTHROUGH 01 &bull; MIDSOLE ELASTOMER</span>
+          <h2 style="font-size: 2.4rem; margin-bottom: 1rem;">AeroFoam™ Supercritical Core</h2>
+          <p style="color: var(--text-secondary); font-size: 0.98rem; line-height: 1.7; margin-bottom: 1.5rem;">
+            Traditional ethylene vinyl acetate (EVA) foams pack out and lose responsiveness after 150 miles. AeroFoam™ is infused with supercritical nitrogen gas under 300 atmospheres of pressure. The result is a cellular lattice that returns 87.4% of impact energy back into forward momentum.
+          </p>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.9rem; color: #fff; margin-bottom: 2rem;">
+            <li style="display: flex; align-items: center; gap: 0.6rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--neon-lime)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <strong>87.4% Energy Rebound:</strong> 29% higher than standard racing foams.
+            </li>
+            <li style="display: flex; align-items: center; gap: 0.6rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--neon-lime)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <strong>Featherlight Density:</strong> 0.12 g/cm³ density eliminates fatigue over 26.2 miles.
+            </li>
+            <li style="display: flex; align-items: center; gap: 0.6rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--neon-lime)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <strong>All-Temperature Stability:</strong> Maintains consistent cushion from -10°C to +40°C.
+            </li>
+          </ul>
+          <a href="shop.html?category=Running" class="btn btn-primary btn-sm">SHOP AEROFOAM SILHOUETTES</a>
+        </div>
+        <div>
+          <div style="background: radial-gradient(circle, #273042 0%, #11141c 100%); border-radius: var(--radius-lg); padding: 2.5rem; text-align: center; border: 1px solid var(--border-subtle);">
+            <div style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--neon-lime); margin-bottom: 0.5rem;">ENERGY RETURN COMPARISON</div>
+            <table class="benchmark-table">
+              <thead>
+                <tr>
+                  <th>Foam Compound</th>
+                  <th>Rebound %</th>
+                  <th>Durability Rating</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="color: var(--neon-lime); font-weight: 700;">
+                  <td>STRIDE AeroFoam™</td>
+                  <td>87.4%</td>
+                  <td>600+ Miles</td>
+                </tr>
+                <tr>
+                  <td>Competitor PEBA</td>
+                  <td>74.2%</td>
+                  <td>300 Miles</td>
+                </tr>
+                <tr>
+                  <td>Standard Running EVA</td>
+                  <td>58.1%</td>
+                  <td>200 Miles</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- BREAKTHROUGH 2: VORTEXPLATE CARBON -->
+      <div class="tech-deep-card reverse" id="vortexplate">
+        <div>
+          <div style="background: radial-gradient(circle, #273042 0%, #11141c 100%); border-radius: var(--radius-lg); padding: 2.5rem; text-align: center; border: 1px solid var(--border-subtle);">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80" alt="VortexPlate Carbon" style="width: 100%; transform: rotate(-10deg); filter: drop-shadow(0 20px 25px rgba(0,0,0,0.8));">
+            <div style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--volt-orange); margin-top: 1rem;">
+              3D ASYMMETRIC SPOON-ROCKER GEOMETRY
+            </div>
+          </div>
+        </div>
+        <div>
+          <span class="section-tag" style="color: var(--volt-orange);">// BREAKTHROUGH 02 &bull; CARBON PROPULSION</span>
+          <h2 style="font-size: 2.4rem; margin-bottom: 1rem;">VortexPlate™ Carbon Spine</h2>
+          <p style="color: var(--text-secondary); font-size: 0.98rem; line-height: 1.7; margin-bottom: 1.5rem;">
+            A flat plate causes calf strain. STRIDE's VortexPlate™ is 3D-sculpted with an ergonomic metatarsal drop and spoon curvature. As your foot rolls from midfoot contact to toe-off, the plate acts as a spring-loaded lever that propels you forward into the next stride cycle.
+          </p>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.9rem; color: #fff; margin-bottom: 2rem;">
+            <li style="display: flex; align-items: center; gap: 0.6rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--volt-orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <strong>Aerospace 3K Weave:</strong> Zero torsional twisting on sharp turns.
+            </li>
+            <li style="display: flex; align-items: center; gap: 0.6rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--volt-orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <strong>Variable Stiffness Tuning:</strong> Stiff under the big toe for pop, flexible at lateral edges for smooth cornering.
+            </li>
+          </ul>
+          <a href="product-detail.html?id=stride-phantom-racer" class="btn btn-orange btn-sm">VIEW PHANTOM RACER</a>
+        </div>
+      </div>
+
+      <!-- BREAKTHROUGH 3: BIOKNIT -->
+      <div class="tech-deep-card" id="bioknit">
+        <div>
+          <span class="section-tag" style="color: var(--cyber-blue);">// BREAKTHROUGH 03 &bull; SUSTAINABLE KNITTING</span>
+          <h2 style="font-size: 2.4rem; margin-bottom: 1rem;">BioKnit™ Seamless Upper</h2>
+          <p style="color: var(--text-secondary); font-size: 0.98rem; line-height: 1.7; margin-bottom: 1.5rem;">
+            Woven as a single continuous piece on computerized jacquard looms. By altering yarn density millimeter by millimeter, we achieve lockdown hold around the midfoot, ventilated air channels over the forefoot, and zero internal seams to eliminate blisters.
+          </p>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.9rem; color: #fff; margin-bottom: 2rem;">
+            <li style="display: flex; align-items: center; gap: 0.6rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cyber-blue)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <strong>92% Less Material Waste:</strong> Engineered to the exact shoe shape without cut-off scraps.
+            </li>
+            <li style="display: flex; align-items: center; gap: 0.6rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cyber-blue)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <strong>Hydrophobic Treatment:</strong> Repels sweat and puddle splashes without clogging air ventilation.
+            </li>
+          </ul>
+          <a href="sustainability.html" class="btn btn-outline btn-sm">OUR CIRCULAR MISSION</a>
+        </div>
+        <div>
+          <div style="background: radial-gradient(circle, #273042 0%, #11141c 100%); border-radius: var(--radius-lg); padding: 2.5rem; text-align: center; border: 1px solid var(--border-subtle);">
+            <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=800&q=80" alt="BioKnit" style="width: 100%; transform: rotate(-8deg);">
+            <div style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--cyber-blue); margin-top: 1rem;">
+              PRECISION DIGITAL KNITTING &bull; ZERO FRICTION INTERIOR
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="stride-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="margin-bottom: 1rem;">
+            <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            STRIDE
+          </a>
+          <p class="footer-desc">Engineered for Movement. Crafted for the Culture.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">COLLECTIONS</div>
+          <div class="footer-links">
+            <a href="shop.html" class="footer-link">All Sneakers</a>
+            <a href="customizer.html" class="footer-link">STRIDE ID Customizer</a>
+            <a href="drops.html" class="footer-link">Upcoming Drops</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">SUPPORT</div>
+          <div class="footer-links">
+            <a href="size-guide.html" class="footer-link">Size Guide</a>
+            <a href="track-order.html" class="footer-link">Track Order</a>
+            <a href="faq.html" class="footer-link">FAQ & Returns</a>
+            <a href="contact.html" class="footer-link">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 STRIDE Footwear Group Ltd. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/stride-data.js"></script>
+  <script src="js/stride-core.js"></script>
+</body>
+</html>
