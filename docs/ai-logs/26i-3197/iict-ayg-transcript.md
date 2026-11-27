@@ -138,17 +138,9 @@ Please convert my all chats to cli  that there will be each and everything in my
 The current local time is: 2026-11-28T00:38:02+05:00.
 </ADDITIONAL_METADATA>
 
+
+
 ## Step 13 — User Request
-_2026-11-27T19:39:49Z_
-
-<USER_REQUEST>
-Please just overwrite the whole chats in cli pleas do it 
-</USER_REQUEST>
-<ADDITIONAL_METADATA>
-The current local time is: 2026-11-28T00:39:49+05:00.
-</ADDITIONAL_METADATA>
-
-## Step 14 — User Request
 _2026-11-27T20:33:24Z_
 
 <USER_REQUEST>
