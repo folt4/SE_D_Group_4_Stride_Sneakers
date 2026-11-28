@@ -80,14 +80,13 @@
   </aside>
 
   <!-- Wishlist Main Content -->
-  <main>
   <section class="section" style="padding: 4rem 0 6rem;">
     <div class="container">
       <div style="display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem;">
         <div>
           <div class="section-tag"><span class="dot"></span> SAVED COLLECTION</div>
           <h1 style="font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 900; text-transform: uppercase;">YOUR SAVED <span class="text-neon">GRAILS</span></h1>
-          <p id="wishlist-count-subtitle" style="color: #A0A4AE;">0 Saved Pairs • Synchronized across all browser sessions.</p>
+          <p style="color: #A0A4AE;">Synchronized across all browser sessions.</p>
         </div>
         <div id="wishlist-action-btns" style="display: flex; gap: 0.75rem;">
           <button id="move-all-cart-btn" class="btn btn-primary btn-sm">Move All to Bag</button>
@@ -111,7 +110,6 @@
       </div>
     </div>
   </section>
-  </main>
 
   <!-- Footer -->
   <footer class="stride-footer">
@@ -201,15 +199,9 @@
       const grid = document.getElementById('wishlist-grid');
       const emptyView = document.getElementById('empty-wishlist-view');
       const actionBtns = document.getElementById('wishlist-action-btns');
-      const countSubtitle = document.getElementById('wishlist-count-subtitle');
 
       const ids = STRIDE_APP.getWishlist();
       const products = STRIDE_DATA.products.filter(p => ids.includes(p.id));
-
-      if (countSubtitle) {
-        const label = products.length === 1 ? '1 Saved Pair' : `${products.length} Saved Pairs`;
-        countSubtitle.textContent = `${label} • Synchronized across all browser sessions.`;
-      }
 
       if (products.length === 0) {
         grid.style.display = 'none';
@@ -226,7 +218,7 @@
         <div class="product-card">
           <div class="product-card-thumb">
             <span class="badge badge-grail" style="position: absolute; top: 1rem; left: 1rem;">${p.condition}</span>
-            <button class="product-card-fav active" onclick="removeFromWishlist('${p.id}')" title="Remove" aria-label="Remove ${p.name} from wishlist">
+            <button class="product-card-fav active" onclick="removeFromWishlist('${p.id}')" title="Remove">
               ✕
             </button>
             <img src="${p.image}" alt="${p.name}" class="product-card-img">
@@ -258,9 +250,7 @@
       const p = STRIDE_DATA.products.find(item => item.id === id);
       if (p) {
         STRIDE_APP.addToCart(p, "US 10", p.condition);
-        const updatedWishlist = STRIDE_APP.getWishlist().filter(itemId => itemId !== id);
-        localStorage.setItem('stride_wishlist', JSON.stringify(updatedWishlist));
-        STRIDE_APP.updateBadges();
+        STRIDE_APP.toggleWishlist(id);
         renderWishlist();
         // Open drawer
         document.querySelector('.cart-drawer').classList.add('open');

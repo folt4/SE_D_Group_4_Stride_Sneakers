@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sneaker Size Guide & Interactive Fit Calculator — STRIDE</title>
+  <meta name="description" content="Find your exact sneaker size across US, UK, EU, and CM. Interactive foot length calculator, brand-specific fit recommendations, and measurement guide.">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo-mark.svg">
+  <link rel="stylesheet" href="../css/stride.css">
+  <style>
+    .calc-box {
+      background: linear-gradient(135deg, #171A22 0%, #11131A 100%);
+      border: 1px solid var(--border-neon);
+      border-radius: var(--radius-xl);
+      padding: 3rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 90, 31, 0.2);
+      margin-bottom: 3.5rem;
+    }
+    .size-result-card {
+      background: #11131A;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1rem;
+      text-align: center;
+      transition: all var(--transition-fast);
+    }
+    .size-result-card.highlight {
+      border-color: var(--neon-orange);
+      background: rgba(255, 90, 31, 0.08);
+      box-shadow: 0 0 15px rgba(255, 90, 31, 0.25);
+    }
+    .size-result-card .reg-label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: #A0A4AE;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+    .size-result-card .reg-val {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #FFFFFF;
+    }
+    .size-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    .size-table th, .size-table td {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.9rem;
+    }
+    .size-table th {
+      background: #11131A;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--neon-orange);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .size-table tr:hover td {
+      background: rgba(255, 90, 31, 0.04);
+      color: #FFFFFF;
+    }
+    .unit-toggle-btn {
+      background: #11131A;
+      border: 1px solid var(--border-subtle);
+      color: #A0A4AE;
+      padding: 0.45rem 1.1rem;
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .unit-toggle-btn.active {
+      background: var(--neon-orange);
+      color: #08090D;
+      border-color: var(--neon-orange);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <span>🛡️ <strong>100% VERIFIED AUTHENTIC:</strong> 8-Point Physical Lab Inspection.</span>
+    <span>✈️ <strong>FREE EXPRESS INSURED SHIPPING</strong> on orders over $200 with code <strong>STRIDE10</strong></span>
+  </div>
+
+  <!-- Header -->
+  <header class="stride-header">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../index.html" class="brand-logo" aria-label="STRIDE Home">
+          <img src="../assets/logo.svg" alt="STRIDE — Be Your Own" width="160" height="40">
+        </a>
+
+        <nav class="nav-links">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="size-guide.html" class="nav-link active">Size Guide</a>
+          <a href="sell.html" class="nav-link">Sell Your Sneakers</a>
+          <a href="about.html" class="nav-link">About</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-btn trigger-search" aria-label="Search Sneakers (Ctrl+K)">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+          <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span class="badge-count wishlist-badge-count" style="display:none;">0</span>
+          </a>
+          <button class="icon-btn trigger-cart" aria-label="Shopping Bag">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span class="badge-count cart-badge-count" style="display:none;">0</span>
+          </button>
+          <a href="login.html" class="icon-btn" aria-label="My Account">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </a>
+          <button class="icon-btn mobile-menu-toggle" aria-label="Open Navigation Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-nav">
+    <div>
+      <div class="mobile-nav-header">
+        <img src="../assets/logo.svg" alt="STRIDE" width="130">
+        <button class="mobile-nav-close" style="color: #A0A4AE; font-size: 1.4rem;">✕</button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="../index.html" class="mobile-nav-link">Home</a>
+        <a href="shop.html" class="mobile-nav-link">Shop All Grails</a>
+        <a href="size-guide.html" class="mobile-nav-link active">Size Guide & Calculator</a>
+        <a href="sell.html" class="mobile-nav-link">Sell Your Sneakers</a>
+        <a href="about.html" class="mobile-nav-link">About STRIDE</a>
+        <a href="faq.html" class="mobile-nav-link">Authentication & FAQ</a>
+        <a href="contact.html" class="mobile-nav-link">VIP Concierge</a>
+        <a href="orders.html" class="mobile-nav-link">Order History</a>
+        <a href="track-order.html" class="mobile-nav-link">Live Shipment Tracking</a>
+      </div>
+    </div>
+    <div style="border-top: 1px solid #292D38; padding-top: 1.5rem;">
+      <a href="login.html" class="btn btn-primary btn-block">Sign In / Register</a>
+    </div>
+  </aside>
+
+  <!-- Size Guide Banner -->
+  <section class="section" style="padding: 4.5rem 0 2.5rem; background: radial-gradient(circle at 50% 10%, rgba(255, 90, 31, 0.12) 0%, transparent 60%); text-align: center;">
+    <div class="container">
+      <div class="section-tag"><span class="dot"></span> BIOMECHANICAL FIT FINDER</div>
+      <h1 class="section-title">SNEAKER <span class="text-neon">SIZE GUIDE</span></h1>
+      <p class="section-subtitle" style="max-width: 680px; margin: 0 auto;">
+        Ensure the ideal lockdown for your grails. Convert international sizes, calculate foot length, and view brand-specific silhouette recommendations.
+      </p>
+    </div>
+  </section>
+
+  <!-- Interactive Fit Calculator -->
+  <section class="section" style="padding: 1rem 0 4rem;">
+    <div class="container" style="max-width: 960px;">
+      <div class="calc-box">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h3 style="font-size: 1.35rem; font-weight: 800; text-transform: uppercase;">Interactive Foot Length Calculator</h3>
+            <p style="font-size: 0.88rem; color: #A0A4AE;">Slide to your exact heel-to-toe measurement for instant international size conversion.</p>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="unit-toggle-btn active" id="btn-cm" onclick="setUnit('cm')">Centimeters (CM)</button>
+            <button class="unit-toggle-btn" id="btn-in" onclick="setUnit('in')">Inches (IN)</button>
+          </div>
+        </div>
+
+        <!-- Slider Bar -->
+        <div style="margin-bottom: 2.5rem;">
+          <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 1.1rem; font-weight: 800; margin-bottom: 0.75rem;">
+            <span style="color: #A0A4AE;">Heel-to-Toe Length:</span>
+            <span id="slider-display-val" style="color: var(--neon-orange); font-size: 1.35rem;">27.0 CM (10.6 IN)</span>
+          </div>
+          <input type="range" id="foot-slider" min="24.5" max="30.5" step="0.5" value="27.0" style="width: 100%; accent-color: var(--neon-orange); cursor: pointer; height: 8px;">
+          <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.75rem; color: #626775; margin-top: 0.5rem;">
+            <span>24.5 CM (US 6.5)</span>
+            <span>27.0 CM (US 10.0)</span>
+            <span>30.5 CM (US 13.5)</span>
+          </div>
+        </div>
+
+        <!-- Calculated Size Results Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem;">
+          <div class="size-result-card highlight">
+            <div class="reg-label" style="color: #FF5A1F;">US Men's</div>
+            <div class="reg-val" id="res-us-m" style="color: #FF5A1F;">10.0</div>
+          </div>
+          <div class="size-result-card">
+            <div class="reg-label">US Women's</div>
+            <div class="reg-val" id="res-us-w">11.5</div>
+          </div>
+          <div class="size-result-card">
+            <div class="reg-label">UK Size</div>
+            <div class="reg-val" id="res-uk">9.0</div>
+          </div>
+          <div class="size-result-card">
+            <div class="reg-label">EU Size</div>
+            <div class="reg-val" id="res-eu">44.0</div>
+          </div>
+          <div class="size-result-card">
+            <div class="reg-label">Japan (CM)</div>
+            <div class="reg-val" id="res-cm">27.0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Brand Silhouette Fit Advice Grid -->
+      <div style="margin-bottom: 4rem;">
+        <div class="section-title-wrap" style="text-align: left; margin-bottom: 2rem;">
+          <div class="section-tag"><span class="dot"></span> FIELD ADVICE</div>
+          <h2 style="font-size: 1.8rem; font-weight: 800; text-transform: uppercase;">Brand-Specific <span class="text-neon">Fit Recommendations</span></h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+          <div class="glass-card">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+              <span style="font-weight: 800; font-size: 1.1rem; color: #FFFFFF;">Air Jordan 1 & 4</span>
+              <span class="badge badge-deadstock">TRUE TO SIZE</span>
+            </div>
+            <p style="font-size: 0.88rem; line-height: 1.5;">Order your standard US sneaker size. Jordan 4s may feel slightly snug around the pinky toe during initial break-in, but leather adapts quickly.</p>
+          </div>
+
+          <div class="glass-card">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+              <span style="font-weight: 800; font-size: 1.1rem; color: #FFFFFF;">Nike SB Dunk Low</span>
+              <span class="badge badge-grail">HALF SIZE UP (+0.5)</span>
+            </div>
+            <p style="font-size: 0.88rem; line-height: 1.5;">Due to the extra padded puffy tongue and Zoom Air sockliner, SB Dunks fit narrower than regular retro Dunks. We recommend going +0.5 up.</p>
+          </div>
+
+          <div class="glass-card">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+              <span style="font-weight: 800; font-size: 1.1rem; color: #FFFFFF;">Adidas Yeezy 350 V2</span>
+              <span class="badge badge-grail">HALF SIZE UP (+0.5)</span>
+            </div>
+            <p style="font-size: 0.88rem; line-height: 1.5;">The shallow toe box in Primeknit creates front toe pressure. Going a half size up (+0.5) guarantees ideal comfort and daily wearability.</p>
+          </div>
+
+          <div class="glass-card">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+              <span style="font-weight: 800; font-size: 1.1rem; color: #FFFFFF;">Balenciaga Triple S</span>
+              <span class="badge badge-vnds">FULL SIZE DOWN (-1.0)</span>
+            </div>
+            <p style="font-size: 0.88rem; line-height: 1.5;">European luxury cut. Triple S silhouettes run significantly oversized. We advise sizing down by 1 full EU size (e.g. EU 44 → EU 43).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Master Conversion Table -->
+      <div class="glass-card" style="padding: 2.5rem; margin-bottom: 4rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 1px solid #292D38; padding-bottom: 1rem;">
+          <h3 style="font-size: 1.25rem; font-weight: 800; text-transform: uppercase;">Universal Sneaker Conversion Table</h3>
+          <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #FF5A1F;">INTERNATIONAL STANDARDS</span>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table class="size-table">
+            <thead>
+              <tr>
+                <th>US Men</th>
+                <th>US Women</th>
+                <th>UK Size</th>
+                <th>EU Size</th>
+                <th>Foot Length (CM)</th>
+                <th>Foot Length (Inches)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>US 7.0</strong></td><td>US 8.5</td><td>UK 6.0</td><td>EU 40.0</td><td>25.0 cm</td><td>9.8 in</td></tr>
+              <tr><td><strong>US 7.5</strong></td><td>US 9.0</td><td>UK 6.5</td><td>EU 40.5</td><td>25.5 cm</td><td>10.0 in</td></tr>
+              <tr><td><strong>US 8.0</strong></td><td>US 9.5</td><td>UK 7.0</td><td>EU 41.0</td><td>26.0 cm</td><td>10.2 in</td></tr>
+              <tr><td><strong>US 8.5</strong></td><td>US 10.0</td><td>UK 7.5</td><td>EU 42.0</td><td>26.5 cm</td><td>10.4 in</td></tr>
+              <tr><td><strong>US 9.0</strong></td><td>US 10.5</td><td>UK 8.0</td><td>EU 42.5</td><td>27.0 cm</td><td>10.6 in</td></tr>
+              <tr><td><strong>US 9.5</strong></td><td>US 11.0</td><td>UK 8.5</td><td>EU 43.0</td><td>27.5 cm</td><td>10.8 in</td></tr>
+              <tr style="background: rgba(255, 90, 31, 0.08); font-weight: 700;">
+                <td style="color: #FF5A1F;"><strong>US 10.0 (Popular)</strong></td><td>US 11.5</td><td>UK 9.0</td><td>EU 44.0</td><td>28.0 cm</td><td>11.0 in</td>
+              </tr>
+              <tr><td><strong>US 10.5</strong></td><td>US 12.0</td><td>UK 9.5</td><td>EU 44.5</td><td>28.5 cm</td><td>11.2 in</td></tr>
+              <tr><td><strong>US 11.0</strong></td><td>US 12.5</td><td>UK 10.0</td><td>EU 45.0</td><td>29.0 cm</td><td>11.4 in</td></tr>
+              <tr><td><strong>US 11.5</strong></td><td>US 13.0</td><td>UK 10.5</td><td>EU 45.5</td><td>29.5 cm</td><td>11.6 in</td></tr>
+              <tr><td><strong>US 12.0</strong></td><td>US 13.5</td><td>UK 11.0</td><td>EU 46.0</td><td>30.0 cm</td><td>11.8 in</td></tr>
+              <tr><td><strong>US 13.0</strong></td><td>US 14.5</td><td>UK 12.0</td><td>EU 47.5</td><td>31.0 cm</td><td>12.2 in</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- How to Measure Your Foot at Home -->
+      <div class="glass-card" style="padding: 2.5rem;">
+        <h3 style="font-size: 1.25rem; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5rem; text-align: center;">
+          How to Measure Your Feet at Home (3 Steps)
+        </h3>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem;">
+          <div style="text-align: center;">
+            <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(255, 90, 31, 0.15); border: 1px solid var(--neon-orange); color: #FF5A1F; font-family: var(--font-display); font-size: 1.4rem; font-weight: 900; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+              1
+            </div>
+            <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Tape Paper to Floor</h4>
+            <p style="font-size: 0.85rem; color: #A0A4AE;">Stand upright with your heel firmly pressed against a flat wall on top of a sheet of white paper.</p>
+          </div>
+
+          <div style="text-align: center;">
+            <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(255, 90, 31, 0.15); border: 1px solid var(--neon-orange); color: #FF5A1F; font-family: var(--font-display); font-size: 1.4rem; font-weight: 900; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+              2
+            </div>
+            <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Mark Heel & Longest Toe</h4>
+            <p style="font-size: 0.85rem; color: #A0A4AE;">Using a pencil held strictly vertical, trace the furthest tip of your longest toe and mark the back of the heel.</p>
+          </div>
+
+          <div style="text-align: center;">
+            <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(255, 90, 31, 0.15); border: 1px solid var(--neon-orange); color: #FF5A1F; font-family: var(--font-display); font-size: 1.4rem; font-weight: 900; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+              3
+            </div>
+            <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Measure Length</h4>
+            <p style="font-size: 0.85rem; color: #A0A4AE;">Measure the distance between marks in centimeters. Use our interactive slider above to look up your perfect size.</p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="shop.html" class="btn btn-primary btn-lg">Browse Sneakers in Your Size</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="stride-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="brand-logo">
+            <img src="../assets/logo.svg" alt="STRIDE — Be Your Own" width="160">
+          </a>
+          <p>The premier international sneaker resale destination. Providing 100% verified authentic grails and seamless consignment since 2024.</p>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Marketplace</h4>
+          <div class="footer-links">
+            <a href="shop.html" class="footer-link">All Sneakers</a>
+            <a href="shop.html?brand=Jordan" class="footer-link">Air Jordan</a>
+            <a href="shop.html?brand=Nike" class="footer-link">Nike & Dunks</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Services</h4>
+          <div class="footer-links">
+            <a href="size-guide.html" class="footer-link">Size Guide & Calculator</a>
+            <a href="sell.html" class="footer-link">Sell Your Sneakers</a>
+            <a href="faq.html" class="footer-link">8-Point Verification</a>
+            <a href="track-order.html" class="footer-link">Track Delivery</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <div class="footer-links">
+            <a href="about.html" class="footer-link">About STRIDE</a>
+            <a href="contact.html" class="footer-link">Contact Concierge</a>
+            <a href="faq.html" class="footer-link">FAQ & Buyer Shield</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Social</h4>
+          <div class="footer-socials">
+            <a href="#" class="social-link">IG</a>
+            <a href="#" class="social-link">X</a>
+            <a href="#" class="social-link">DC</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 STRIDE Marketplace Inc. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search Modal & Cart Drawer -->
+  <div class="search-modal-backdrop">
+    <div class="search-modal-box">
+      <div class="search-input-wrap">
+        <input type="text" class="search-input" placeholder="Search by model, brand, or SKU...">
+        <button class="close-search">✕</button>
+      </div>
+      <div class="search-results-list"></div>
+    </div>
+  </div>
+
+  <div class="cart-drawer-backdrop"></div>
+  <aside class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3 style="font-size: 1.15rem; font-weight: 800; text-transform: uppercase;">Your Shopping Bag</h3>
+      <button class="close-cart">✕</button>
+    </div>
+    <div class="cart-drawer-items"></div>
+    <div class="cart-drawer-footer">
+      <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+        <span>Subtotal</span>
+        <span class="cart-drawer-subtotal">$0</span>
+      </div>
+      <a href="cart.html" class="btn btn-primary btn-block">View Bag</a>
+    </div>
+  </aside>
+
+  <!-- Scripts -->
+  <script src="../js/stride-data.js"></script>
+  <script src="../js/stride-core.js"></script>
+
+  <script>
+    let currentUnit = 'cm';
+    const slider = document.getElementById('foot-slider');
+    const displayVal = document.getElementById('slider-display-val');
+
+    // Sizing Mapping Matrix
+    const sizeMap = [
+      { cm: 24.5, in: 9.6, usM: '6.5', usW: '8.0', uk: '5.5', eu: '39.0' },
+      { cm: 25.0, in: 9.8, usM: '7.0', usW: '8.5', uk: '6.0', eu: '40.0' },
+      { cm: 25.5, in: 10.0, usM: '7.5', usW: '9.0', uk: '6.5', eu: '40.5' },
+      { cm: 26.0, in: 10.2, usM: '8.0', usW: '9.5', uk: '7.0', eu: '41.0' },
+      { cm: 26.5, in: 10.4, usM: '8.5', usW: '10.0', uk: '7.5', eu: '42.0' },
+      { cm: 27.0, in: 10.6, usM: '9.0', usW: '10.5', uk: '8.0', eu: '42.5' },
+      { cm: 27.5, in: 10.8, usM: '9.5', usW: '11.0', uk: '8.5', eu: '43.0' },
+      { cm: 28.0, in: 11.0, usM: '10.0', usW: '11.5', uk: '9.0', eu: '44.0' },
+      { cm: 28.5, in: 11.2, usM: '10.5', usW: '12.0', uk: '9.5', eu: '44.5' },
+      { cm: 29.0, in: 11.4, usM: '11.0', usW: '12.5', uk: '10.0', eu: '45.0' },
+      { cm: 29.5, in: 11.6, usM: '11.5', usW: '13.0', uk: '10.5', eu: '45.5' },
+      { cm: 30.0, in: 11.8, usM: '12.0', usW: '13.5', uk: '11.0', eu: '46.0' },
+      { cm: 30.5, in: 12.0, usM: '13.0', usW: '14.5', uk: '12.0', eu: '47.5' }
+    ];
+
+    function updateCalculations(val) {
+      const numericVal = parseFloat(val);
+      // Find closest match
+      let closest = sizeMap[0];
+      let minDiff = 999;
+      sizeMap.forEach(item => {
+        const diff = Math.abs(item.cm - numericVal);
+        if (diff < minDiff) {
+          minDiff = diff;
+          closest = item;
+        }
+      });
+
+      displayVal.textContent = `${closest.cm} CM (${closest.in} IN)`;
+      document.getElementById('res-us-m').textContent = closest.usM;
+      document.getElementById('res-us-w').textContent = closest.usW;
+      document.getElementById('res-uk').textContent = closest.uk;
+      document.getElementById('res-eu').textContent = closest.eu;
+      document.getElementById('res-cm').textContent = closest.cm;
+    }
+
+    slider.addEventListener('input', (e) => {
+      updateCalculations(e.target.value);
+    });
+
+    window.setUnit = function(unit) {
+      currentUnit = unit;
+      document.getElementById('btn-cm').classList.toggle('active', unit === 'cm');
+      document.getElementById('btn-in').classList.toggle('active', unit === 'in');
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCalculations(27.0);
+    });
+  </script>
+</body>
+</html>

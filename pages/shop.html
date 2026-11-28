@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop All Sneakers — STRIDE Verified Marketplace</title>
+  <meta name="description" content="Browse our complete collection of verified deadstock and authentic pre-owned sneakers. Real-time resale market pricing, 8-point physical inspection, insured global shipping.">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo-mark.svg">
+  <link rel="stylesheet" href="../css/stride.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <span>🛡️ <strong>100% VERIFIED AUTHENTIC:</strong> 8-Point Physical Lab Inspection.</span>
+    <span>✈️ <strong>FREE EXPRESS INSURED SHIPPING</strong> on orders over $200 with code <strong>STRIDE10</strong></span>
+  </div>
+
+  <!-- Header -->
+  <header class="stride-header">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../index.html" class="brand-logo" aria-label="STRIDE Home">
+          <img src="../assets/logo.svg" alt="STRIDE — Be Your Own" width="160" height="40">
+        </a>
+
+        <nav class="nav-links">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="shop.html" class="nav-link active">Shop</a>
+          <a href="shop.html?filter=grail" class="nav-link">Collections <span class="badge-hot">HOT</span></a>
+          <a href="size-guide.html" class="nav-link">Size Guide</a>
+          <a href="sell.html" class="nav-link">Sell Your Sneakers</a>
+          <a href="about.html" class="nav-link">About</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-btn trigger-search" aria-label="Search Sneakers (Ctrl+K)">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+          <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span class="badge-count wishlist-badge-count" style="display:none;">0</span>
+          </a>
+          <button class="icon-btn trigger-cart" aria-label="Shopping Bag">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span class="badge-count cart-badge-count" style="display:none;">0</span>
+          </button>
+          <a href="login.html" class="icon-btn" aria-label="My Account">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </a>
+          <button class="icon-btn mobile-menu-toggle" aria-label="Open Navigation Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-nav">
+    <div>
+      <div class="mobile-nav-header">
+        <img src="../assets/logo.svg" alt="STRIDE" width="130">
+        <button class="mobile-nav-close" style="color: #A0A4AE; font-size: 1.4rem;">✕</button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="../index.html" class="mobile-nav-link">Home</a>
+        <a href="shop.html" class="mobile-nav-link active">Shop All Grails</a>
+        <a href="sell.html" class="mobile-nav-link">Sell Your Sneakers</a>
+        <a href="about.html" class="mobile-nav-link">About STRIDE</a>
+        <a href="faq.html" class="mobile-nav-link">Authentication & FAQ</a>
+        <a href="contact.html" class="mobile-nav-link">VIP Concierge</a>
+        <a href="orders.html" class="mobile-nav-link">Order History</a>
+        <a href="track-order.html" class="mobile-nav-link">Live Shipment Tracking</a>
+      </div>
+    </div>
+    <div style="border-top: 1px solid #292D38; padding-top: 1.5rem;">
+      <a href="login.html" class="btn btn-primary btn-block">Sign In / Register</a>
+    </div>
+  </aside>
+
+  <!-- Page Body -->
+  <div class="shop-page-wrap">
+    <div class="container">
+      <!-- Breadcrumb & Header -->
+      <div style="margin-bottom: 2rem;">
+        <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #A0A4AE; margin-bottom: 0.5rem;">
+          <a href="../index.html" style="color: #A0A4AE;">HOME</a> / <span style="color: #FF5A1F;">SNEAKER CATALOGUE</span>
+        </div>
+        <h1 style="font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 900; text-transform: uppercase;">
+          ALL VERIFIED <span class="text-neon">GRAILS</span>
+        </h1>
+        <p style="color: #A0A4AE; font-size: 0.95rem;">
+          Showing <span id="filtered-count" style="color: #FFFFFF; font-weight: 700;">10</span> verified pairs. Updated continuously from global consignment intakes.
+        </p>
+      </div>
+
+      <!-- Toolbar: Search Bar & Sort Dropdown -->
+      <div class="shop-toolbar">
+        <div class="shop-search-bar">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="catalogue-search-input" placeholder="Filter by name, brand, or SKU (e.g. Travis Scott, Chicago)...">
+        </div>
+
+        <div class="shop-sort-controls">
+          <label style="font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; color: #A0A4AE;">Sort By:</label>
+          <select id="catalogue-sort-select" class="custom-select">
+            <option value="featured">Curated & Featured</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="newest">Newest Releases</option>
+            <option value="rating">Highest Rated</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Main Layout: Filters Sidebar + Products Grid -->
+      <div class="shop-main-layout">
+        <!-- Filter Sidebar -->
+        <aside class="shop-filter-sidebar">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #292D38;">
+            <span style="font-family: var(--font-display); font-size: 1rem; font-weight: 800; text-transform: uppercase;">Filters</span>
+            <button id="reset-filters-btn" style="font-family: var(--font-mono); font-size: 0.74rem; color: #FF5A1F; text-transform: uppercase; cursor: pointer;">Reset All</button>
+          </div>
+
+          <!-- Brand Filter -->
+          <div class="filter-group">
+            <div class="filter-title">Brand</div>
+            <div class="filter-checkbox-list" id="brand-filters-container">
+              <label class="filter-checkbox-label">
+                <span><input type="checkbox" name="brand" value="Jordan"> Air Jordan</span>
+                <span class="text-mono" style="font-size: 0.72rem; color: #626775;">(3)</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <span><input type="checkbox" name="brand" value="Nike"> Nike & Dunks</span>
+                <span class="text-mono" style="font-size: 0.72rem; color: #626775;">(3)</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <span><input type="checkbox" name="brand" value="Travis Scott"> Travis Scott</span>
+                <span class="text-mono" style="font-size: 0.72rem; color: #626775;">(1)</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <span><input type="checkbox" name="brand" value="Yeezy"> Yeezy</span>
+                <span class="text-mono" style="font-size: 0.72rem; color: #626775;">(1)</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <span><input type="checkbox" name="brand" value="New Balance"> New Balance</span>
+                <span class="text-mono" style="font-size: 0.72rem; color: #626775;">(1)</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <span><input type="checkbox" name="brand" value="STRIDE Lab"> STRIDE Lab</span>
+                <span class="text-mono" style="font-size: 0.72rem; color: #626775;">(1)</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <span><input type="checkbox" name="brand" value="Balenciaga"> Balenciaga</span>
+                <span class="text-mono" style="font-size: 0.72rem; color: #626775;">(1)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Condition Filter -->
+          <div class="filter-group">
+            <div class="filter-title">Condition Grade</div>
+            <div class="filter-checkbox-list" id="condition-filters-container">
+              <label class="filter-checkbox-label">
+                <span><input type="checkbox" name="condition" value="Deadstock"> Deadstock (Brand New)</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <span><input type="checkbox" name="condition" value="VNDS 9.5/10"> VNDS (9.5/10)</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <span><input type="checkbox" name="condition" value="Pre-Owned 9/10"> Pre-Owned (9/10)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Size Filter Chips -->
+          <div class="filter-group">
+            <div class="filter-title">US Men's Size</div>
+            <div class="size-chips-grid" id="size-chips-container">
+              <div class="size-chip" data-size="US 7.5">7.5</div>
+              <div class="size-chip" data-size="US 8">8.0</div>
+              <div class="size-chip" data-size="US 8.5">8.5</div>
+              <div class="size-chip" data-size="US 9">9.0</div>
+              <div class="size-chip" data-size="US 9.5">9.5</div>
+              <div class="size-chip" data-size="US 10">10.0</div>
+              <div class="size-chip" data-size="US 10.5">10.5</div>
+              <div class="size-chip" data-size="US 11">11.0</div>
+              <div class="size-chip" data-size="US 11.5">11.5</div>
+              <div class="size-chip" data-size="US 12">12.0</div>
+              <div class="size-chip" data-size="US 13">13.0</div>
+            </div>
+            <div style="margin-top: 0.75rem; text-align: right;">
+              <a href="size-guide.html" style="font-family: var(--font-mono); font-size: 0.74rem; color: #FF5A1F; text-decoration: underline;">📏 Sizing Guide & Converter →</a>
+            </div>
+          </div>
+
+          <!-- Price Range Slider -->
+          <div class="filter-group">
+            <div class="filter-title">Max Price (<span id="price-slider-val" style="color: #FF5A1F;">$300</span>)</div>
+            <input type="range" id="price-range-slider" min="100" max="300" step="10" value="300" style="width: 100%; accent-color: #FF5A1F; cursor: pointer;">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.72rem; color: #626775; margin-top: 0.4rem;">
+              <span id="slider-min-val">$100</span>
+              <span id="slider-max-val">$300</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Product Grid -->
+        <main>
+          <div class="catalogue-grid" id="catalogue-products-grid">
+            <!-- Dynamically Rendered -->
+          </div>
+          <div id="no-results-view" style="display: none; text-align: center; padding: 4rem 2rem; background: #171A22; border-radius: 16px; border: 1px solid #292D38;">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#626775" stroke-width="1.5" style="margin: 0 auto 1rem;"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">No Matching Grails Found</h3>
+            <p style="color: #A0A4AE; font-size: 0.9rem; margin-bottom: 1.5rem;">Try widening your price range or clearing selected brand filters.</p>
+            <button class="btn btn-outline btn-sm" onclick="resetFilters()">Reset All Filters</button>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="stride-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="brand-logo">
+            <img src="../assets/logo.svg" alt="STRIDE — Be Your Own" width="160">
+          </a>
+          <p>The premier international sneaker resale destination. Providing 100% verified authentic grails and seamless consignment since 2024.</p>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Marketplace</h4>
+          <div class="footer-links">
+            <a href="shop.html" class="footer-link">All Sneakers</a>
+            <a href="shop.html?brand=Jordan" class="footer-link">Air Jordan</a>
+            <a href="shop.html?brand=Nike" class="footer-link">Nike & Dunks</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Services</h4>
+          <div class="footer-links">
+            <a href="size-guide.html" class="footer-link">Size Guide & Calculator</a>
+            <a href="sell.html" class="footer-link">Sell Your Sneakers</a>
+            <a href="faq.html" class="footer-link">8-Point Verification</a>
+            <a href="track-order.html" class="footer-link">Track Delivery</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <div class="footer-links">
+            <a href="about.html" class="footer-link">About STRIDE</a>
+            <a href="contact.html" class="footer-link">Contact Concierge</a>
+            <a href="faq.html" class="footer-link">FAQ & Buyer Shield</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Social</h4>
+          <div class="footer-socials">
+            <a href="#" class="social-link">IG</a>
+            <a href="#" class="social-link">X</a>
+            <a href="#" class="social-link">DC</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 STRIDE Marketplace Inc. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search Modal & Cart Drawer -->
+  <div class="search-modal-backdrop">
+    <div class="search-modal-box">
+      <div class="search-input-wrap">
+        <input type="text" class="search-input" placeholder="Search by model, brand, or SKU...">
+        <button class="close-search">✕</button>
+      </div>
+      <div class="search-results-list"></div>
+    </div>
+  </div>
+
+  <div class="cart-drawer-backdrop"></div>
+  <aside class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3 style="font-size: 1.15rem; font-weight: 800; text-transform: uppercase;">Your Shopping Bag</h3>
+      <button class="close-cart">✕</button>
+    </div>
+    <div class="cart-drawer-items"></div>
+    <div class="cart-drawer-footer">
+      <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+        <span>Subtotal</span>
+        <span class="cart-drawer-subtotal">$0</span>
+      </div>
+      <a href="cart.html" class="btn btn-primary btn-block">View Bag</a>
+    </div>
+  </aside>
+
+  <!-- Scripts -->
+  <script src="../js/stride-data.js"></script>
+  <script src="../js/stride-core.js"></script>
+  <script src="../js/stride-interactions.js"></script>
+
+  <script>
+    // State Filter Store
+    let selectedBrands = [];
+    let selectedConditions = [];
+    let selectedSize = null;
+    let maxPrice = 6000;
+    let searchQuery = '';
+    let sortMode = 'featured';
+
+    const grid = document.getElementById('catalogue-products-grid');
+    const countEl = document.getElementById('filtered-count');
+    const noResults = document.getElementById('no-results-view');
+    const slider = document.getElementById('price-range-slider');
+    const sliderVal = document.getElementById('price-slider-val');
+    const searchInput = document.getElementById('catalogue-search-input');
+    const sortSelect = document.getElementById('catalogue-sort-select');
+
+    // Parse URL params (e.g. ?brand=Jordan or ?filter=grail)
+    function parseUrlParams() {
+      const params = new URLSearchParams(window.location.search);
+      const brandParam = params.get('brand');
+      const filterParam = params.get('filter');
+
+      if (brandParam) {
+        selectedBrands.push(brandParam);
+        const checkbox = document.querySelector(`input[name="brand"][value="${brandParam}"]`);
+        if (checkbox) checkbox.checked = true;
+      }
+
+      if (filterParam === 'grail') {
+        selectedConditions.push('Deadstock');
+      }
+    }
+
+    function renderCatalogue() {
+      if (typeof STRIDE_DATA === 'undefined') return;
+
+      let list = [...STRIDE_DATA.products];
+
+      // 1. Search Query
+      if (searchQuery) {
+        const q = searchQuery.toLowerCase();
+        list = list.filter(p => 
+          p.name.toLowerCase().includes(q) ||
+          p.brand.toLowerCase().includes(q) ||
+          p.sku.toLowerCase().includes(q)
+        );
+      }
+
+      // 2. Brand Filter
+      if (selectedBrands.length > 0) {
+        list = list.filter(p => selectedBrands.includes(p.brand));
+      }
+
+      // 3. Condition Filter
+      if (selectedConditions.length > 0) {
+        list = list.filter(p => selectedConditions.includes(p.condition));
+      }
+
+      // 4. Max Price Slider
+      list = list.filter(p => p.price <= maxPrice);
+
+      // 5. Sorting
+      if (sortMode === 'price-low') {
+        list.sort((a, b) => a.price - b.price);
+      } else if (sortMode === 'price-high') {
+        list.sort((a, b) => b.price - a.price);
+      } else if (sortMode === 'newest') {
+        list.sort((a, b) => b.releaseYear - a.releaseYear);
+      } else if (sortMode === 'rating') {
+        list.sort((a, b) => b.rating - a.rating);
+      }
+
+      countEl.textContent = list.length;
+
+      if (list.length === 0) {
+        grid.style.display = 'none';
+        noResults.style.display = 'block';
+        return;
+      }
+
+      grid.style.display = 'grid';
+      noResults.style.display = 'none';
+
+      grid.innerHTML = list.map(p => {
+        const isFav = STRIDE_APP.isWishlisted(p.id);
+        const badgeClass = p.badge === 'GRAIL' ? 'badge-grail' : (p.condition === 'Deadstock' ? 'badge-deadstock' : 'badge-vnds');
+
+        return `
+          <div class="product-card">
+            <div class="product-card-thumb">
+              <div class="product-card-badges">
+                <span class="badge ${badgeClass}">${p.badge || p.condition}</span>
+                <span class="badge badge-verified">🛡️ VERIFIED</span>
+              </div>
+              <button 
+                class="product-card-fav ${isFav ? 'active' : ''}" 
+                data-wishlist-id="${p.id}" 
+                onclick="STRIDE_APP.toggleWishlist('${p.id}')"
+                aria-label="Save to Wishlist"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="${isFav ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+              <img src="${p.image}" alt="${p.name}" class="product-card-img">
+              <button class="product-card-quickview" onclick="STRIDE_INTERACTIONS.openQuickView('${p.id}')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                QUICK VIEW
+              </button>
+            </div>
+            <div class="product-card-body">
+              <div class="product-card-brand">${p.brand} • ${p.releaseYear}</div>
+              <h3 class="product-card-title">${p.name}</h3>
+              <div class="product-card-meta">
+                <div class="product-card-price">
+                  <span class="price-label">Current Resale</span>
+                  <span class="price-val" data-price-usd="${p.price}">${STRIDE_APP.formatPrice(p.price)}</span>
+                </div>
+                <a href="product-detail.html?id=${p.id}" class="btn btn-secondary product-card-cta">
+                  DETAILS
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      STRIDE_INTERACTIONS.initCardTilt();
+    }
+
+    function resetFilters() {
+      selectedBrands = [];
+      selectedConditions = [];
+      selectedSize = null;
+      maxPrice = 300;
+      searchQuery = '';
+      slider.value = 300;
+      updateSliderLabels();
+      searchInput.value = '';
+      sortSelect.value = 'featured';
+
+      document.querySelectorAll('input[type="checkbox"]').forEach(c => c.checked = false);
+      document.querySelectorAll('.size-chip').forEach(c => c.classList.remove('active'));
+
+      renderCatalogue();
+    }
+
+    function updateSliderLabels() {
+      sliderVal.textContent = STRIDE_APP.formatPrice(maxPrice);
+      const minEl = document.getElementById('slider-min-val');
+      const maxEl = document.getElementById('slider-max-val');
+      if (minEl) minEl.textContent = STRIDE_APP.formatPrice(100);
+      if (maxEl) maxEl.textContent = STRIDE_APP.formatPrice(300);
+    }
+
+    // Attach Event Listeners
+    document.querySelectorAll('input[name="brand"]').forEach(cb => {
+      cb.addEventListener('change', (e) => {
+        if (e.target.checked) {
+          selectedBrands.push(e.target.value);
+        } else {
+          selectedBrands = selectedBrands.filter(b => b !== e.target.value);
+        }
+        renderCatalogue();
+      });
+    });
+
+    document.querySelectorAll('input[name="condition"]').forEach(cb => {
+      cb.addEventListener('change', (e) => {
+        if (e.target.checked) {
+          selectedConditions.push(e.target.value);
+        } else {
+          selectedConditions = selectedConditions.filter(c => c !== e.target.value);
+        }
+        renderCatalogue();
+      });
+    });
+
+    document.querySelectorAll('.size-chip').forEach(chip => {
+      chip.addEventListener('click', (e) => {
+        const sz = e.target.getAttribute('data-size');
+        if (selectedSize === sz) {
+          selectedSize = null;
+          chip.classList.remove('active');
+        } else {
+          document.querySelectorAll('.size-chip').forEach(c => c.classList.remove('active'));
+          selectedSize = sz;
+          chip.classList.add('active');
+        }
+        renderCatalogue();
+      });
+    });
+
+    slider.addEventListener('input', (e) => {
+      maxPrice = parseInt(e.target.value, 10);
+      sliderVal.textContent = STRIDE_APP.formatPrice(maxPrice);
+      renderCatalogue();
+    });
+
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim();
+      renderCatalogue();
+    });
+
+    sortSelect.addEventListener('change', (e) => {
+      sortMode = e.target.value;
+      renderCatalogue();
+    });
+
+    document.getElementById('reset-filters-btn').addEventListener('click', resetFilters);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      parseUrlParams();
+      updateSliderLabels();
+      renderCatalogue();
+
+      window.addEventListener('stride:currencychange', () => {
+        updateSliderLabels();
+        renderCatalogue();
+      });
+    });
+  </script>
+</body>
+</html>

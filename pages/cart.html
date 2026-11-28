@@ -7,31 +7,6 @@
   <meta name="description" content="Review your selected sneakers, apply promotional codes, and calculate insured express delivery in your STRIDE shopping bag.">
   <link rel="icon" type="image/svg+xml" href="../assets/logo-mark.svg">
   <link rel="stylesheet" href="../css/stride.css">
-  <style>
-    @media (max-width: 768px) {
-      .cart-item-row {
-        grid-template-columns: 80px 1fr auto;
-        gap: 0.9rem;
-      }
-      .cart-item-img {
-        width: 80px;
-        height: 68px;
-      }
-      .cart-item-row > .quantity-control {
-        grid-column: 2 / 3;
-        justify-self: start;
-      }
-      .cart-item-row > .cart-item-price {
-        grid-column: 3 / 4;
-        grid-row: 1 / 2;
-      }
-      .cart-item-row > .cart-item-remove {
-        grid-column: 3 / 4;
-        grid-row: 2 / 3;
-        justify-self: end;
-      }
-    }
-  </style>
 </head>
 <body>
 
@@ -105,7 +80,6 @@
   </aside>
 
   <!-- Cart Page Layout -->
-  <main>
   <div class="container">
     <div class="cart-layout">
       <!-- Left: Item Table -->
@@ -191,7 +165,6 @@
       </aside>
     </div>
   </div>
-  </main>
 
   <!-- Footer -->
   <footer class="stride-footer">
@@ -264,17 +237,11 @@
       const emptyView = document.getElementById('cart-empty-view');
       const checkoutBtn = document.getElementById('proceed-checkout-btn');
 
-      const shippingMsg = document.getElementById('cart-page-shipping-msg');
-      const shippingFill = document.getElementById('cart-page-shipping-fill');
-
       if (cart.length === 0) {
         container.style.display = 'none';
         emptyView.style.display = 'block';
         checkoutBtn.style.pointerEvents = 'none';
         checkoutBtn.style.opacity = '0.5';
-        checkoutBtn.setAttribute('aria-disabled', 'true');
-        shippingFill.style.width = '0%';
-        shippingMsg.innerHTML = `Add <strong>${STRIDE_APP.formatPrice(200)}</strong> more to qualify for Free Express Insured Shipping.`;
         updateSummary(0);
         return;
       }
@@ -283,7 +250,6 @@
       emptyView.style.display = 'none';
       checkoutBtn.style.pointerEvents = 'auto';
       checkoutBtn.style.opacity = '1';
-      checkoutBtn.removeAttribute('aria-disabled');
 
       container.innerHTML = cart.map(item => `
         <div class="cart-item-row">
@@ -294,14 +260,14 @@
             <div style="font-size: 0.85rem; color: #A0A4AE; margin-top: 0.25rem;">Size: <strong style="color: #FFFFFF;">${item.size}</strong></div>
           </div>
           <div class="quantity-control">
-            <button class="quantity-btn" onclick="updateQty('${item.id}', '${item.size}', -1)" aria-label="Decrease quantity of ${item.name}">-</button>
+            <button class="quantity-btn" onclick="updateQty('${item.id}', '${item.size}', -1)">-</button>
             <span class="quantity-display">${item.qty}</span>
-            <button class="quantity-btn" onclick="updateQty('${item.id}', '${item.size}', 1)" aria-label="Increase quantity of ${item.name}">+</button>
+            <button class="quantity-btn" onclick="updateQty('${item.id}', '${item.size}', 1)">+</button>
           </div>
-          <div class="cart-item-price" style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; text-align: right;">
+          <div style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; text-align: right;">
             ${STRIDE_APP.formatPrice(item.price * item.qty)}
           </div>
-          <button class="cart-item-remove" onclick="removeItem('${item.id}', '${item.size}')" style="color: #626775; font-size: 1.1rem; cursor: pointer;" title="Remove Item" aria-label="Remove ${item.name} from bag">✕</button>
+          <button onclick="removeItem('${item.id}', '${item.size}')" style="color: #626775; font-size: 1.1rem; cursor: pointer;" title="Remove Item">✕</button>
         </div>
       `).join('');
 
@@ -309,6 +275,8 @@
       updateSummary(subtotal);
 
       // Shipping Progress
+      const shippingMsg = document.getElementById('cart-page-shipping-msg');
+      const shippingFill = document.getElementById('cart-page-shipping-fill');
       if (subtotal >= 200) {
         shippingFill.style.width = '100%';
         shippingMsg.innerHTML = `⚡ You qualify for <strong>FREE Insured Express Shipping!</strong>`;
@@ -362,13 +330,6 @@
       const input = document.getElementById('promo-code-input');
       if (STRIDE_APP.applyPromoCode(input.value)) {
         renderCartPage();
-      }
-    });
-
-    document.getElementById('promo-code-input').addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        document.getElementById('apply-promo-btn').click();
       }
     });
 

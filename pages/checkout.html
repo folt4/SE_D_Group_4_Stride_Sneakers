@@ -27,43 +27,6 @@
     .payment-tab input[type="radio"] {
       accent-color: var(--neon-orange);
     }
-    .checkout-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 3.5rem;
-      align-items: flex-start;
-    }
-    .checkout-summary-card {
-      position: sticky;
-      top: 100px;
-    }
-    .checkout-name-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-    .checkout-city-row {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr 1fr;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-    @media (max-width: 960px) {
-      .checkout-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      .checkout-summary-card {
-        position: static;
-      }
-    }
-    @media (max-width: 600px) {
-      .checkout-name-row,
-      .checkout-city-row {
-        grid-template-columns: 1fr;
-      }
-    }
   </style>
 </head>
 <body>
@@ -81,8 +44,8 @@
     </div>
   </header>
 
-  <main class="container" style="padding-top: 3rem; padding-bottom: 6rem;">
-    <div class="checkout-grid">
+  <div class="container" style="padding-top: 3rem; padding-bottom: 6rem;">
+    <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 3.5rem; align-items: flex-start;">
       <!-- Left: Checkout Forms -->
       <div>
         <form id="checkout-form" novalidate>
@@ -112,7 +75,7 @@
               2. Delivery Address
             </h3>
 
-            <div class="checkout-name-row">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
               <div class="form-group">
                 <label class="form-label" for="first-name">First Name *</label>
                 <input type="text" id="first-name" class="form-input" placeholder="Alex" required>
@@ -136,7 +99,7 @@
               <input type="text" id="apartment" class="form-input" placeholder="Suite 4B">
             </div>
 
-            <div class="checkout-city-row">
+            <div style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 1rem;">
               <div class="form-group">
                 <label class="form-label" for="city">City *</label>
                 <input type="text" id="city" class="form-input" placeholder="San Francisco" required>
@@ -153,12 +116,6 @@
                 <span class="form-error-msg">Postal code required.</span>
               </div>
             </div>
-
-            <div class="form-group">
-              <label class="form-label" for="country">Country *</label>
-              <input type="text" id="country" class="form-input" placeholder="United States" value="United States" required>
-              <span class="form-error-msg">Country required.</span>
-            </div>
           </div>
 
           <!-- 3. Shipping Speed -->
@@ -166,22 +123,22 @@
             <h3 style="font-size: 1.15rem; font-weight: 800; text-transform: uppercase; margin-bottom: 1.25rem;">
               3. Courier Dispatch Method
             </h3>
-            <label class="payment-tab active" data-shipping-tab="standard">
+            <label class="payment-tab active">
               <input type="radio" name="shipping-method" value="standard" checked>
               <div style="flex-grow: 1;">
                 <div style="font-weight: 700; color: #FFFFFF; font-size: 0.95rem;">FedEx Express Insured Priority (2-3 Business Days)</div>
                 <div style="font-size: 0.78rem; color: #A0A4AE;">Double-boxed with tamper-evident security holographic tape</div>
               </div>
-              <span id="shipping-option-standard-price" style="color: #34D399; font-weight: 800; font-family: var(--font-mono);">FREE</span>
+              <span style="color: #34D399; font-weight: 800; font-family: var(--font-mono);">FREE</span>
             </label>
 
-            <label class="payment-tab" data-shipping-tab="overnight">
+            <label class="payment-tab">
               <input type="radio" name="shipping-method" value="overnight">
               <div style="flex-grow: 1;">
                 <div style="font-weight: 700; color: #FFFFFF; font-size: 0.95rem;">STRIDE Armored Courier (Next Morning Delivery)</div>
                 <div style="font-size: 0.78rem; color: #A0A4AE;">Dedicated courier van direct to your doorstep</div>
               </div>
-              <span id="shipping-option-overnight-price" style="color: #FFFFFF; font-weight: 800; font-family: var(--font-mono);">$45.00</span>
+              <span style="color: #FFFFFF; font-weight: 800; font-family: var(--font-mono);">$45.00</span>
             </label>
           </div>
 
@@ -221,25 +178,10 @@
               <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #A0A4AE; margin-left: auto;">Biometric Touch</span>
             </div>
 
-            <!-- Apple Pay / Google Pay Content -->
-            <div id="apple-fields" style="display: none; background: #11131A; border: 1px solid #292D38; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem;">
-              <div style="font-weight: 700; color: #FFFFFF; font-size: 0.92rem; margin-bottom: 0.35rem;">Biometric Express Checkout Ready</div>
-              <p style="font-size: 0.82rem; color: #A0A4AE; margin: 0;">You will be prompted to confirm payment via Face ID, Touch ID, or Google Pay passkey when you click <strong style="color: #FFFFFF;">Place Order &amp; Secure Grail</strong>.</p>
-            </div>
-
             <div class="payment-tab" id="tab-crypto">
               <input type="radio" name="payment-method" value="crypto">
               <span style="font-weight: 700; color: #FFFFFF;">STRIDE Vault Balance (Crypto / USDC)</span>
               <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #FF5A1F; margin-left: auto;">Instant Settlement</span>
-            </div>
-
-            <!-- Crypto / USDC Content -->
-            <div id="crypto-fields" style="display: none; background: #11131A; border: 1px solid #292D38; border-radius: 12px; padding: 1.5rem; margin-bottom: 0.25rem;">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
-                <span style="font-weight: 700; color: #FFFFFF; font-size: 0.92rem;">USDC Instant Vault Settlement</span>
-                <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #34D399;">0% NETWORK FEE</span>
-              </div>
-              <p style="font-size: 0.82rem; color: #A0A4AE; margin: 0;">Settle instantly using your STRIDE Vault USDC balance with zero gas fees and immediate 8-Point Lab queue priority.</p>
             </div>
           </div>
 
@@ -251,7 +193,7 @@
       </div>
 
       <!-- Right: Live Order Breakdown -->
-      <aside class="glass-card checkout-summary-card">
+      <aside class="glass-card" style="position: sticky; top: 100px;">
         <h3 style="font-size: 1.15rem; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5rem; border-bottom: 1px solid #292D38; padding-bottom: 0.75rem;">
           In Your Bag (<span id="checkout-item-count">0</span>)
         </h3>
@@ -287,98 +229,13 @@
         </div>
       </aside>
     </div>
-  </main>
-
-  <footer class="stride-footer" style="padding: 2rem 0;">
-    <div class="container">
-      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
-        <div>&copy; 2026 STRIDE Marketplace Inc. All rights reserved.</div>
-        <div>Tokyo • New York • London • Paris</div>
-      </div>
-    </div>
-  </footer>
+  </div>
 
   <!-- Scripts -->
   <script src="../js/stride-data.js"></script>
   <script src="../js/stride-core.js"></script>
 
   <script>
-    function getSelectedShippingMethod() {
-      const checked = document.querySelector('input[name="shipping-method"]:checked');
-      return checked ? checked.value : 'standard';
-    }
-
-    function getSelectedPaymentMethod() {
-      const checked = document.querySelector('input[name="payment-method"]:checked');
-      return checked ? checked.value : 'card';
-    }
-
-    function getShippingCost(subtotal) {
-      if (getSelectedShippingMethod() === 'overnight') {
-        return 45;
-      }
-      return subtotal >= 200 || subtotal === 0 ? 0 : 25;
-    }
-
-    function initShippingOptions() {
-      const shippingRadios = document.querySelectorAll('input[name="shipping-method"]');
-      shippingRadios.forEach(radio => {
-        radio.addEventListener('change', () => {
-          document.querySelectorAll('[data-shipping-tab]').forEach(tab => {
-            tab.classList.toggle('active', tab.querySelector('input') === radio);
-          });
-          renderCheckoutSummary();
-        });
-      });
-    }
-
-    function initPaymentTabs() {
-      const paymentTabs = [
-        document.getElementById('tab-card'),
-        document.getElementById('tab-apple'),
-        document.getElementById('tab-crypto')
-      ].filter(Boolean);
-      const paymentPanels = {
-        card: document.getElementById('card-fields'),
-        apple: document.getElementById('apple-fields'),
-        crypto: document.getElementById('crypto-fields')
-      };
-      const cardInputs = ['card-num', 'card-exp', 'card-cvc']
-        .map(id => document.getElementById(id))
-        .filter(Boolean);
-
-      function syncPaymentUI(selectedMethod) {
-        paymentTabs.forEach(tab => {
-          const radio = tab.querySelector('input[name="payment-method"]');
-          const isSelected = radio && radio.value === selectedMethod;
-          if (radio) radio.checked = isSelected;
-          tab.classList.toggle('active', isSelected);
-        });
-
-        Object.entries(paymentPanels).forEach(([method, panel]) => {
-          if (panel) panel.style.display = method === selectedMethod ? 'block' : 'none';
-        });
-
-        const isCard = selectedMethod === 'card';
-        cardInputs.forEach(input => {
-          input.required = isCard;
-          if (!isCard) input.parentElement.classList.remove('error');
-        });
-      }
-
-      paymentTabs.forEach(tab => {
-        const radio = tab.querySelector('input[name="payment-method"]');
-        tab.addEventListener('click', () => {
-          if (radio) syncPaymentUI(radio.value);
-        });
-        if (radio) {
-          radio.addEventListener('change', () => syncPaymentUI(radio.value));
-        }
-      });
-
-      syncPaymentUI(getSelectedPaymentMethod());
-    }
-
     function renderCheckoutSummary() {
       const cart = STRIDE_APP.getCart();
       if (cart.length === 0) {
@@ -403,42 +260,21 @@
       `).join('');
 
       const subtotal = STRIDE_APP.getCartSubtotal();
-      const standardCost = subtotal >= 200 || subtotal === 0 ? 0 : 25;
-      const shippingCost = getShippingCost(subtotal);
       const promo = STRIDE_APP.getActiveDiscount();
-      const discountAmount = promo.amount || 0;
-
-      const stdOptionPrice = document.getElementById('shipping-option-standard-price');
-      if (stdOptionPrice) {
-        stdOptionPrice.textContent = standardCost === 0 ? 'FREE' : STRIDE_APP.formatPrice(standardCost);
-        stdOptionPrice.style.color = standardCost === 0 ? '#34D399' : '#FFFFFF';
-      }
-      const overnightOptionPrice = document.getElementById('shipping-option-overnight-price');
-      if (overnightOptionPrice) {
-        overnightOptionPrice.textContent = STRIDE_APP.formatPrice(45);
-      }
+      let discountAmount = promo.amount || 0;
 
       document.getElementById('checkout-subtotal').textContent = STRIDE_APP.formatPrice(subtotal);
 
-      const shippingEl = document.getElementById('checkout-shipping');
-      shippingEl.textContent = shippingCost === 0 ? 'FREE' : STRIDE_APP.formatPrice(shippingCost);
-      shippingEl.style.color = shippingCost === 0 ? '#34D399' : '#FFFFFF';
-
-      const discountRow = document.getElementById('checkout-discount-row');
       if (discountAmount > 0) {
-        discountRow.style.display = 'flex';
+        document.getElementById('checkout-discount-row').style.display = 'flex';
         document.getElementById('checkout-discount').textContent = `-${STRIDE_APP.formatPrice(discountAmount)}`;
-      } else {
-        discountRow.style.display = 'none';
       }
 
-      const total = Math.max(0, subtotal + shippingCost - discountAmount);
+      const total = Math.max(0, subtotal - discountAmount);
       document.getElementById('checkout-total').textContent = STRIDE_APP.formatPrice(total);
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      initShippingOptions();
-      initPaymentTabs();
       renderCheckoutSummary();
       window.addEventListener('stride:currencychange', renderCheckoutSummary);
     });
@@ -447,7 +283,6 @@
     document.getElementById('checkout-form').addEventListener('submit', function(e) {
       e.preventDefault();
       let valid = true;
-      let firstInvalid = null;
 
       const email = document.getElementById('checkout-email');
       const phone = document.getElementById('checkout-phone');
@@ -457,69 +292,30 @@
       const city = document.getElementById('city');
       const state = document.getElementById('state');
       const zip = document.getElementById('zip');
-      const country = document.getElementById('country');
 
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      const phoneDigits = phone.value.replace(/\D/g, '');
-
-      const checks = [
-        { input: email, ok: emailPattern.test(email.value.trim()) },
-        { input: phone, ok: phoneDigits.length >= 7 },
-        { input: firstName, ok: firstName.value.trim().length > 0 },
-        { input: lastName, ok: lastName.value.trim().length > 0 },
-        { input: address, ok: address.value.trim().length > 0 },
-        { input: city, ok: city.value.trim().length > 0 },
-        { input: state, ok: state.value.trim().length > 0 },
-        { input: zip, ok: zip.value.trim().length > 0 },
-        { input: country, ok: country.value.trim().length > 0 }
-      ];
-
-      if (getSelectedPaymentMethod() === 'card') {
-        const cardNum = document.getElementById('card-num');
-        const cardExp = document.getElementById('card-exp');
-        const cardCvc = document.getElementById('card-cvc');
-        checks.push(
-          { input: cardNum, ok: cardNum.value.trim().length >= 12 },
-          { input: cardExp, ok: /^\d{2}\/\d{2}$/.test(cardExp.value.trim()) },
-          { input: cardCvc, ok: /^\d{3,4}$/.test(cardCvc.value.trim()) }
-        );
-      }
-
-      checks.forEach(({ input, ok }) => {
-        if (!ok) {
+      const inputs = [email, phone, firstName, lastName, address, city, state, zip];
+      inputs.forEach(input => {
+        if (!input.value.trim()) {
           input.parentElement.classList.add('error');
-          if (!firstInvalid) firstInvalid = input;
           valid = false;
         } else {
           input.parentElement.classList.remove('error');
         }
       });
 
-      if (!valid) {
-        if (firstInvalid) firstInvalid.focus();
-        STRIDE_APP.showToast('Please complete all required checkout fields.', 'error');
-        return;
-      }
-
       if (valid) {
         const orderId = `STR-${Math.floor(100000 + Math.random() * 900000)}`;
         const cart = STRIDE_APP.getCart();
         const subtotal = STRIDE_APP.getCartSubtotal();
-        const shippingMethod = getSelectedShippingMethod();
-        const shippingCost = getShippingCost(subtotal);
-        const promo = STRIDE_APP.getActiveDiscount();
-        const discountAmount = promo.amount || 0;
-        const total = Math.max(0, subtotal + shippingCost - discountAmount);
 
         const newOrder = {
           orderId: orderId,
           date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
           status: 'Authenticated by Stride',
-          total: total,
-          paymentMethod: getSelectedPaymentMethod(),
-          carrier: shippingMethod === 'overnight' ? 'STRIDE Armored Courier' : 'FedEx Express Priority',
+          total: subtotal,
+          carrier: 'FedEx Express Priority',
           trackingNumber: `FX-${Math.floor(100000000 + Math.random() * 900000000)}-US`,
-          estimatedDelivery: shippingMethod === 'overnight' ? 'Next Morning Delivery' : 'In 2 Business Days',
+          estimatedDelivery: 'In 2 Business Days',
           currentStep: 1,
           items: cart,
           shippingAddress: {
@@ -528,7 +324,7 @@
             city: city.value,
             state: state.value,
             zip: zip.value,
-            country: country.value.trim() || 'United States'
+            country: 'United States'
           }
         };
 

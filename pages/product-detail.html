@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details — STRIDE Verified Marketplace</title>
+  <meta name="description" content="View verified condition report, high-resolution multi-angle photography, and real-time resale market pricing on STRIDE.">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo-mark.svg">
+  <link rel="stylesheet" href="../css/stride.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <span>🛡️ <strong>100% VERIFIED AUTHENTIC:</strong> 8-Point Physical Lab Inspection.</span>
+    <span>✈️ <strong>FREE EXPRESS INSURED SHIPPING</strong> on orders over $200 with code <strong>STRIDE10</strong></span>
+  </div>
+
+  <!-- Header -->
+  <header class="stride-header">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../index.html" class="brand-logo" aria-label="STRIDE Home">
+          <img src="../assets/logo.svg" alt="STRIDE — Be Your Own" width="160" height="40">
+        </a>
+
+        <nav class="nav-links">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="size-guide.html" class="nav-link">Size Guide</a>
+          <a href="sell.html" class="nav-link">Sell Your Sneakers</a>
+          <a href="about.html" class="nav-link">About</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-btn trigger-search" aria-label="Search Sneakers (Ctrl+K)">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+          <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span class="badge-count wishlist-badge-count" style="display:none;">0</span>
+          </a>
+          <button class="icon-btn trigger-cart" aria-label="Shopping Bag">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span class="badge-count cart-badge-count" style="display:none;">0</span>
+          </button>
+          <a href="login.html" class="icon-btn" aria-label="My Account">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </a>
+          <button class="icon-btn mobile-menu-toggle" aria-label="Open Navigation Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-nav">
+    <div>
+      <div class="mobile-nav-header">
+        <img src="../assets/logo.svg" alt="STRIDE" width="130">
+        <button class="mobile-nav-close" style="color: #A0A4AE; font-size: 1.4rem;">✕</button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="../index.html" class="mobile-nav-link">Home</a>
+        <a href="shop.html" class="mobile-nav-link">Shop All Grails</a>
+        <a href="sell.html" class="mobile-nav-link">Sell Your Sneakers</a>
+        <a href="about.html" class="mobile-nav-link">About STRIDE</a>
+        <a href="faq.html" class="mobile-nav-link">Authentication & FAQ</a>
+        <a href="contact.html" class="mobile-nav-link">VIP Concierge</a>
+        <a href="orders.html" class="mobile-nav-link">Order History</a>
+        <a href="track-order.html" class="mobile-nav-link">Live Shipment Tracking</a>
+      </div>
+    </div>
+    <div style="border-top: 1px solid #292D38; padding-top: 1.5rem;">
+      <a href="login.html" class="btn btn-primary btn-block">Sign In / Register</a>
+    </div>
+  </aside>
+
+  <!-- Main PDP Section -->
+  <section class="pdp-section">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #A0A4AE; margin-bottom: 2rem;">
+        <a href="../index.html" style="color: #A0A4AE;">HOME</a> / 
+        <a href="shop.html" style="color: #A0A4AE;">SHOP</a> / 
+        <span id="pdp-breadcrumb-name" style="color: #FF5A1F;">TRAVIS SCOTT AJ1</span>
+      </div>
+
+      <div class="pdp-grid">
+        <!-- Left: Gallery Stage -->
+        <div class="pdp-gallery-wrap">
+          <div class="pdp-main-image-box">
+            <span class="badge badge-grail" id="pdp-condition-badge" style="position: absolute; top: 1.5rem; left: 1.5rem;">DEADSTOCK (NEW)</span>
+            <img src="" alt="Sneaker Photo" id="pdp-main-image" class="pdp-main-img">
+          </div>
+          <div class="pdp-thumbnails-strip" id="pdp-thumbnails">
+            <!-- Thumbnails rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- Right: Purchasing Controls & Information -->
+        <div class="pdp-details-info">
+          <div class="pdp-brand-tag" id="pdp-brand">TRAVIS SCOTT • 2022</div>
+          <h1 class="pdp-title" id="pdp-title">Travis Scott x Air Jordan 1 Low 'Reverse Mocha'</h1>
+          
+          <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1.25rem;">
+            <div style="display: flex; align-items: center; gap: 0.35rem; color: #FFB800; font-size: 0.95rem;">
+              ★★★★★ <span style="color: #FFFFFF; font-weight: 700; font-family: var(--font-mono); font-size: 0.85rem;" id="pdp-rating">4.95</span>
+            </div>
+            <span style="color: #626775;">•</span>
+            <span style="font-size: 0.82rem; color: #A0A4AE;" id="pdp-reviews-count">428 verified transactions</span>
+            <span style="color: #626775;">•</span>
+            <span class="badge badge-verified">🛡️ 100% AUTHENTIC</span>
+          </div>
+
+          <div class="pdp-price-row">
+            <div>
+              <span class="price-label">Current Secondary Market Price</span>
+              <div class="pdp-current-price" id="pdp-price">$1,280</div>
+            </div>
+            <div class="pdp-retail-compare" id="pdp-retail-compare">
+              Original Retail: $150
+            </div>
+          </div>
+
+          <!-- Size Selection Grid -->
+          <div class="pdp-size-selector-wrap">
+            <div class="pdp-size-header">
+              <span style="font-family: var(--font-display); font-weight: 700; text-transform: uppercase;">Select US Men's Size:</span>
+              <a href="size-guide.html" style="font-family: var(--font-mono); font-size: 0.82rem; color: #FF5A1F; font-weight: 700; display: inline-flex; align-items: center; gap: 0.35rem;">📏 Sizing Guide & Converter →</a>
+            </div>
+            <div class="pdp-size-grid" id="pdp-size-grid">
+              <!-- Dynamically populated buttons -->
+            </div>
+          </div>
+
+          <!-- CTAs: Add to Cart, Buy Now & Wishlist -->
+          <div class="pdp-cta-actions">
+            <button id="pdp-add-cart-btn" class="btn btn-primary btn-lg" style="flex: 2;">
+              ADD TO BAG
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            </button>
+            <button id="pdp-wishlist-btn" class="btn btn-secondary btn-lg" style="flex: 1;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              SAVED
+            </button>
+          </div>
+
+          <!-- Authenticity Guarantee Badge Box -->
+          <div class="pdp-guarantee-box">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(0, 229, 255, 0.12); border: 1px solid rgba(0, 229, 255, 0.4); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <h4 style="font-size: 0.95rem; color: #FFFFFF; margin-bottom: 0.2rem;">STRIDE 8-Point Physical Inspection</h4>
+              <p style="font-size: 0.82rem; color: #A0A4AE; margin: 0;" id="pdp-authenticity">
+                Passed stereomicroscopy, UV glow reactivity, insole stitch density, and verified factory box provenance. Attached with cryptographic RFID seal.
+              </p>
+            </div>
+          </div>
+
+          <!-- Product Description & Specs -->
+          <div class="glass-card" style="padding: 1.8rem; margin-top: 1rem;">
+            <h4 style="font-size: 1rem; text-transform: uppercase; margin-bottom: 0.75rem;">Provenance & Details</h4>
+            <p style="font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.6;" id="pdp-description"></p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.85rem; border-top: 1px solid #292D38; padding-top: 1rem;">
+              <div>
+                <span style="color: #626775; font-family: var(--font-mono);">SKU:</span>
+                <span style="color: #FFFFFF; font-weight: 700; margin-left: 0.5rem;" id="pdp-sku">DM7866-162</span>
+              </div>
+              <div>
+                <span style="color: #626775; font-family: var(--font-mono);">BOX CONDITION:</span>
+                <span style="color: #FFFFFF; font-weight: 700; margin-left: 0.5rem;" id="pdp-box">Original Box</span>
+              </div>
+              <div>
+                <span style="color: #626775; font-family: var(--font-mono);">COLORWAY:</span>
+                <span style="color: #FFFFFF; font-weight: 700; margin-left: 0.5rem;" id="pdp-colorway">Sail / Red</span>
+              </div>
+              <div>
+                <span style="color: #626775; font-family: var(--font-mono);">DISPATCH:</span>
+                <span style="color: #34D399; font-weight: 700; margin-left: 0.5rem;">Ships within 24h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recommended Grails Section -->
+      <div style="margin-top: 6rem; border-top: 1px solid #292D38; padding-top: 4rem;">
+        <div class="section-title-wrap" style="text-align: left; margin-bottom: 2.5rem;">
+          <div class="section-tag"><span class="dot"></span> SIMILAR MARKET DEMAND</div>
+          <h2 class="section-title">YOU MIGHT ALSO <span class="text-neon">COLLECT</span></h2>
+        </div>
+        <div class="catalogue-grid" id="related-products-grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="stride-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="brand-logo">
+            <img src="../assets/logo.svg" alt="STRIDE — Be Your Own" width="160">
+          </a>
+          <p>The premier international sneaker resale destination. Providing 100% verified authentic grails and seamless consignment since 2024.</p>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Marketplace</h4>
+          <div class="footer-links">
+            <a href="shop.html" class="footer-link">All Sneakers</a>
+            <a href="shop.html?brand=Jordan" class="footer-link">Air Jordan</a>
+            <a href="shop.html?brand=Nike" class="footer-link">Nike & Dunks</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Services</h4>
+          <div class="footer-links">
+            <a href="size-guide.html" class="footer-link">Size Guide & Calculator</a>
+            <a href="sell.html" class="footer-link">Sell Your Sneakers</a>
+            <a href="faq.html" class="footer-link">8-Point Verification</a>
+            <a href="track-order.html" class="footer-link">Track Delivery</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <div class="footer-links">
+            <a href="about.html" class="footer-link">About STRIDE</a>
+            <a href="contact.html" class="footer-link">Contact Concierge</a>
+            <a href="faq.html" class="footer-link">FAQ & Buyer Shield</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Social</h4>
+          <div class="footer-socials">
+            <a href="#" class="social-link">IG</a>
+            <a href="#" class="social-link">X</a>
+            <a href="#" class="social-link">DC</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 STRIDE Marketplace Inc. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search Modal & Cart Drawer -->
+  <div class="search-modal-backdrop">
+    <div class="search-modal-box">
+      <div class="search-input-wrap">
+        <input type="text" class="search-input" placeholder="Search by model, brand, or SKU...">
+        <button class="close-search">✕</button>
+      </div>
+      <div class="search-results-list"></div>
+    </div>
+  </div>
+
+  <div class="cart-drawer-backdrop"></div>
+  <aside class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3 style="font-size: 1.15rem; font-weight: 800; text-transform: uppercase;">Your Shopping Bag</h3>
+      <button class="close-cart">✕</button>
+    </div>
+    <div class="cart-drawer-items"></div>
+    <div class="cart-drawer-footer">
+      <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+        <span>Subtotal</span>
+        <span class="cart-drawer-subtotal">$0</span>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <a href="cart.html" class="btn btn-secondary" style="flex: 1;">View Bag</a>
+        <a href="checkout.html" class="btn btn-primary" style="flex: 1.2;">Checkout</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Scripts -->
+  <script src="../js/stride-data.js"></script>
+  <script src="../js/stride-core.js"></script>
+  <script src="../js/stride-interactions.js"></script>
+
+  <script>
+    let currentProduct = null;
+    let selectedSize = "US 10";
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof STRIDE_DATA === 'undefined') return;
+
+      const params = new URLSearchParams(window.location.search);
+      const productId = params.get('id') || 'travis-scott-jordan-1-reverse-mocha';
+      
+      currentProduct = STRIDE_DATA.products.find(p => p.id === productId) || STRIDE_DATA.products[0];
+
+      // Populate DOM elements
+      document.title = `${currentProduct.name} — STRIDE Resale Marketplace`;
+      document.getElementById('pdp-breadcrumb-name').textContent = currentProduct.name;
+      document.getElementById('pdp-title').textContent = currentProduct.name;
+      document.getElementById('pdp-brand').textContent = `${currentProduct.brand} • ${currentProduct.releaseYear}`;
+      
+      function updatePdpPrices() {
+        document.getElementById('pdp-price').textContent = STRIDE_APP.formatPrice(currentProduct.price);
+        document.getElementById('pdp-retail-compare').textContent = `Original Retail: ${STRIDE_APP.formatPrice(currentProduct.retailPrice)}`;
+      }
+      updatePdpPrices();
+      window.addEventListener('stride:currencychange', () => {
+        updatePdpPrices();
+        renderRelated();
+      });
+
+      document.getElementById('pdp-description').textContent = currentProduct.description;
+      document.getElementById('pdp-sku').textContent = currentProduct.sku;
+      document.getElementById('pdp-box').textContent = currentProduct.box;
+      document.getElementById('pdp-colorway').textContent = currentProduct.colorway;
+      document.getElementById('pdp-authenticity').textContent = currentProduct.authenticity;
+      document.getElementById('pdp-condition-badge').textContent = currentProduct.condition;
+      document.getElementById('pdp-rating').textContent = currentProduct.rating;
+      document.getElementById('pdp-reviews-count').textContent = `${currentProduct.reviewsCount} verified transactions`;
+
+      // Set Main Image
+      const mainImg = document.getElementById('pdp-main-image');
+      mainImg.src = currentProduct.image;
+      mainImg.alt = currentProduct.name;
+
+      // Populate Thumbnails
+      const thumbStrip = document.getElementById('pdp-thumbnails');
+      const gallery = currentProduct.gallery && currentProduct.gallery.length > 0 ? currentProduct.gallery : [currentProduct.image];
+      
+      thumbStrip.innerHTML = gallery.map((imgUrl, idx) => `
+        <div class="pdp-thumb-item ${idx === 0 ? 'active' : ''}" onclick="switchPdpImage('${imgUrl}', this)">
+          <img src="${imgUrl}" alt="Angle ${idx + 1}">
+        </div>
+      `).join('');
+
+      // Populate Size Grid
+      const sizeGrid = document.getElementById('pdp-size-grid');
+      const defaultSizes = ["US 7.5", "US 8", "US 8.5", "US 9", "US 9.5", "US 10", "US 10.5", "US 11", "US 11.5", "US 12", "US 13"];
+      
+      sizeGrid.innerHTML = defaultSizes.map(sz => `
+        <button class="pdp-size-btn ${sz === selectedSize ? 'selected' : ''}" onclick="selectSize('${sz}', this)">
+          ${sz.replace('US ', '')}
+        </button>
+      `).join('');
+
+      // Wishlist Button state
+      const wishBtn = document.getElementById('pdp-wishlist-btn');
+      if (STRIDE_APP.isWishlisted(currentProduct.id)) {
+        wishBtn.classList.add('btn-primary');
+        wishBtn.classList.remove('btn-secondary');
+      }
+
+      wishBtn.addEventListener('click', () => {
+        const added = STRIDE_APP.toggleWishlist(currentProduct.id);
+        wishBtn.classList.toggle('btn-primary', added);
+        wishBtn.classList.toggle('btn-secondary', !added);
+      });
+
+      // Add to Bag Button
+      document.getElementById('pdp-add-cart-btn').addEventListener('click', () => {
+        STRIDE_APP.addToCart(currentProduct, selectedSize, currentProduct.condition);
+        // Open drawer
+        document.querySelector('.cart-drawer').classList.add('open');
+        document.querySelector('.cart-drawer-backdrop').classList.add('open');
+      });
+
+      // Render Related Products
+      function renderRelated() {
+        const relatedGrid = document.getElementById('related-products-grid');
+        const related = STRIDE_DATA.products.filter(p => p.id !== currentProduct.id).slice(0, 4);
+        
+        relatedGrid.innerHTML = related.map(p => `
+          <div class="product-card">
+            <div class="product-card-thumb">
+              <span class="badge badge-grail" style="position: absolute; top: 1rem; left: 1rem;">${p.condition}</span>
+              <img src="${p.image}" alt="${p.name}" class="product-card-img">
+            </div>
+            <div class="product-card-body">
+              <div class="product-card-brand">${p.brand}</div>
+              <h3 class="product-card-title">${p.name}</h3>
+              <div class="product-card-meta">
+                <div class="product-card-price">
+                  <span class="price-val" data-price-usd="${p.price}">${STRIDE_APP.formatPrice(p.price)}</span>
+                </div>
+                <a href="product-detail.html?id=${p.id}" class="btn btn-secondary product-card-cta">VIEW</a>
+              </div>
+            </div>
+          </div>
+        `).join('');
+
+        STRIDE_INTERACTIONS.initCardTilt();
+      }
+      renderRelated();
+    });
+
+    function switchPdpImage(url, el) {
+      document.getElementById('pdp-main-image').src = url;
+      document.querySelectorAll('.pdp-thumb-item').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function selectSize(sz, btn) {
+      selectedSize = sz;
+      document.querySelectorAll('.pdp-size-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      STRIDE_APP.showToast(`Selected size ${sz}`, 'info');
+    }
+  </script>
+</body>
+</html>
