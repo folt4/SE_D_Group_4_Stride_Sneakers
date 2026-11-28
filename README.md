@@ -115,24 +115,7 @@ All state is stored in **`localStorage`** (no backend required):
 
 ---
 
-## 🚀 Running Locally
 
-```bash
-# Clone the repository
-git clone https://github.com/folt4/SE_D_Group_4_Stride_Sneakers.git
-cd SE_D_Group_4_Stride_Sneakers
-
-# Switch to this branch
-git checkout i263197
-
-# Serve locally (Python 3)
-python -m http.server 8080
-
-# Open in browser
-# http://localhost:8080/pages/wishlist.html
-# http://localhost:8080/pages/cart.html
-# http://localhost:8080/pages/checkout.html
-```
 
 > ⚠️ Pages must be served via HTTP (not opened as `file://`) for `fetch()` and localStorage to work correctly.
 
@@ -162,41 +145,14 @@ python -m http.server 8080
 
 ---
 
-## 📋 Wireframe Reference
-
-Pages 10, 11, 12 were built to match the hand-drawn wireframe blueprint by Sarah (SE_D Group 4). The wireframe specifies:
-- Single-column cart layout with summary at bottom
-- "YOUR SAVED GRAILS" heading on wishlist
-- "SECURE CHECKOUT" heading on checkout
-- Three payment options: Card · Apple Pay · Crypto
-- Sticky order summary on checkout (right sidebar)
 
 ---
 
-## 📁 Session Log
-
-The full Antigravity AI-assisted development session log is available at:  
-[`docs/ai-logs/26i-3197/iict-ayg-transcript.md`](docs/ai-logs/26i-3197/iict-ayg-transcript.md)
-
-This log documents every step taken during development of pages 10, 11, and 12.
-
 ---
 
-## 🤝 Team — SE_D Group 4
 
-| Member | Branch | Pages |
-|---|---|---|
-| Aazar Khan (26i-3197) | `i263197` | 10, 11, 12 — Wishlist · Cart · Checkout |
-| *(Other members)* | *(branches)* | *(pages)* |
-
-**Repository:** [SE_D_Group_4_Stride_Sneakers](https://github.com/folt4/SE_D_Group_4_Stride_Sneakers)
-
----
-
-## 📄 License
-
-© 2026 STRIDE Marketplace Inc. — Academic project for IICT Software Engineering course.
-
----
-
-*Built with ❤️ by Aazar Khan · STRIDE — Be Your Own*
+Stride Member 4 Aazar Khan Pages Designed 10,11,12 | `stride_cart` | Array of cart items |
+| `stride_wishlist` | Array of wishlisted product IDs |
+| `stride_promo_code` | Active promo code object |
+| `stride_orders` | Array of placed orders |
+//    Thanks   //
