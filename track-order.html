@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Delivery Tracking — STRIDE Logistics</title>
+  <meta name="description" content="Simulate and track real-time delivery progress for your authenticated STRIDE sneaker orders with our 5-stage shipment stepper.">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo-mark.svg">
+  <link rel="stylesheet" href="../css/stride.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <span>🛡️ <strong>100% VERIFIED AUTHENTIC:</strong> 8-Point Physical Lab Inspection.</span>
+    <span>✈️ <strong>FREE EXPRESS INSURED SHIPPING</strong> on orders over $200 with code <strong>STRIDE10</strong></span>
+  </div>
+
+  <!-- Header -->
+  <header class="stride-header">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../index.html" class="brand-logo" aria-label="STRIDE Home">
+          <img src="../assets/logo.svg" alt="STRIDE — Be Your Own" width="160" height="40">
+        </a>
+
+        <nav class="nav-links">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="orders.html" class="nav-link">Order History</a>
+          <a href="track-order.html" class="nav-link active">Track Delivery</a>
+          <a href="about.html" class="nav-link">About</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-btn trigger-search" aria-label="Search Sneakers (Ctrl+K)">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+          <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span class="badge-count wishlist-badge-count" style="display:none;">0</span>
+          </a>
+          <button class="icon-btn trigger-cart" aria-label="Shopping Bag">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span class="badge-count cart-badge-count" style="display:none;">0</span>
+          </button>
+          <a href="login.html" class="icon-btn" aria-label="My Account">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </a>
+          <button class="icon-btn mobile-menu-toggle" aria-label="Open Navigation Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-nav">
+    <div>
+      <div class="mobile-nav-header">
+        <img src="../assets/logo.svg" alt="STRIDE" width="130">
+        <button class="mobile-nav-close" style="color: #A0A4AE; font-size: 1.4rem;">✕</button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="../index.html" class="mobile-nav-link">Home</a>
+        <a href="shop.html" class="mobile-nav-link">Shop All Grails</a>
+        <a href="sell.html" class="mobile-nav-link">Sell Your Sneakers</a>
+        <a href="about.html" class="mobile-nav-link">About STRIDE</a>
+        <a href="faq.html" class="mobile-nav-link">Authentication & FAQ</a>
+        <a href="contact.html" class="mobile-nav-link">VIP Concierge</a>
+        <a href="orders.html" class="mobile-nav-link">Order History</a>
+        <a href="track-order.html" class="mobile-nav-link active">Live Shipment Tracking</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Tracking Content -->
+  <section class="section" style="padding: 4rem 0 6rem;">
+    <div class="container" style="max-width: 900px;">
+      <div class="section-title-wrap">
+        <div class="section-tag"><span class="dot"></span> LOGISTICS TELEMETRY</div>
+        <h1 class="section-title">DELIVERY <span class="text-neon">TRACKING</span></h1>
+        <p class="section-subtitle">
+          Real-time verification and shipping status for insured STRIDE deliveries worldwide.
+        </p>
+      </div>
+
+      <!-- Tracking Lookup Input -->
+      <div class="glass-card" style="padding: 2rem; margin-bottom: 2.5rem;">
+        <form id="tracking-search-form" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <input 
+            type="text" 
+            id="tracking-input" 
+            class="form-input" 
+            placeholder="Enter Order Number or Tracking ID (e.g. STR-882914 or FX-998241042-US)..." 
+            style="flex-grow: 1; min-width: 280px;"
+            value="STR-882914"
+            required
+          >
+          <button type="submit" class="btn btn-primary">
+            TRACK SHIPMENT
+          </button>
+        </form>
+      </div>
+
+      <!-- Main Tracking Timeline Card -->
+      <div class="tracking-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #292D38; padding-bottom: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #FF5A1F; text-transform: uppercase;">Tracking Number</div>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #FFFFFF;" id="display-tracking-code">FX-998241042-US</h3>
+          </div>
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #A0A4AE; text-transform: uppercase;">Estimated Arrival</div>
+            <div style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 900; color: #34D399;" id="display-eta">Today by 6:00 PM</div>
+          </div>
+        </div>
+
+        <!-- 5-Stage Shipment Stepper -->
+        <div class="tracking-timeline">
+          <div class="timeline-progress-bar" id="timeline-progress-fill" style="width: 75%;"></div>
+
+          <!-- Step 1: Placed -->
+          <div class="timeline-step completed" id="step-1">
+            <div class="timeline-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            </div>
+            <div>
+              <div class="timeline-label">Order Placed</div>
+              <div class="timeline-time">Nov 21, 09:15 AM</div>
+            </div>
+          </div>
+
+          <!-- Step 2: Authenticated -->
+          <div class="timeline-step completed" id="step-2">
+            <div class="timeline-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <div class="timeline-label">Authenticated</div>
+              <div class="timeline-time">Nov 21, 11:45 AM</div>
+            </div>
+          </div>
+
+          <!-- Step 3: Shipped -->
+          <div class="timeline-step completed" id="step-3">
+            <div class="timeline-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <div>
+              <div class="timeline-label">Handed to Carrier</div>
+              <div class="timeline-time">Nov 21, 02:20 PM</div>
+            </div>
+          </div>
+
+          <!-- Step 4: Out for Delivery -->
+          <div class="timeline-step current" id="step-4">
+            <div class="timeline-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+            </div>
+            <div>
+              <div class="timeline-label" style="color: #FF5A1F;">Out for Delivery</div>
+              <div class="timeline-time">Courier on Route</div>
+            </div>
+          </div>
+
+          <!-- Step 5: Delivered -->
+          <div class="timeline-step" id="step-5">
+            <div class="timeline-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <div class="timeline-label">Delivered</div>
+              <div class="timeline-time">Pending Signature</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Courier & Verification Details Grid -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; background: #11131A; border: 1px solid #292D38; border-radius: 14px; padding: 1.75rem; margin-top: 2rem;">
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #A0A4AE; text-transform: uppercase;">Logistics Partner</div>
+            <div style="font-weight: 700; color: #FFFFFF; font-size: 1rem; margin-top: 0.25rem;" id="display-carrier">FedEx Express Priority Insured</div>
+            <div style="font-size: 0.8rem; color: #34D399; margin-top: 0.25rem;">✓ Signed by Courier: Flight FX-109</div>
+          </div>
+
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #A0A4AE; text-transform: uppercase;">Destination Address</div>
+            <div style="font-weight: 700; color: #FFFFFF; font-size: 0.95rem; margin-top: 0.25rem;" id="display-address">
+              Alex Vance<br>742 Evergreen Terrace, Suite 4B, San Francisco, CA
+            </div>
+          </div>
+        </div>
+
+        <!-- Demonstration Simulator Buttons -->
+        <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #292D38; text-align: center;">
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #A0A4AE; margin-bottom: 0.75rem;">
+            DEMONSTRATION SIMULATOR CONTROLS:
+          </div>
+          <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
+            <button class="btn btn-secondary btn-sm" onclick="setStep(1)">Stage 1: Placed</button>
+            <button class="btn btn-secondary btn-sm" onclick="setStep(2)">Stage 2: Verified</button>
+            <button class="btn btn-secondary btn-sm" onclick="setStep(3)">Stage 3: Shipped</button>
+            <button class="btn btn-secondary btn-sm" onclick="setStep(4)">Stage 4: Out for Delivery</button>
+            <button class="btn btn-primary btn-sm" onclick="setStep(5)">Stage 5: Delivered</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="stride-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="brand-logo">
+            <img src="../assets/logo.svg" alt="STRIDE — Be Your Own" width="160">
+          </a>
+          <p>The premier international sneaker resale destination. Providing 100% verified authentic grails and seamless consignment since 2024.</p>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Marketplace</h4>
+          <div class="footer-links">
+            <a href="shop.html" class="footer-link">All Sneakers</a>
+            <a href="shop.html?brand=Jordan" class="footer-link">Air Jordan</a>
+            <a href="shop.html?brand=Nike" class="footer-link">Nike & Dunks</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Services</h4>
+          <div class="footer-links">
+            <a href="sell.html" class="footer-link">Sell Your Sneakers</a>
+            <a href="faq.html" class="footer-link">8-Point Verification</a>
+            <a href="orders.html" class="footer-link">Order History</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <div class="footer-links">
+            <a href="about.html" class="footer-link">About STRIDE</a>
+            <a href="contact.html" class="footer-link">Contact Concierge</a>
+            <a href="faq.html" class="footer-link">FAQ & Buyer Shield</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Social</h4>
+          <div class="footer-socials">
+            <a href="#" class="social-link">IG</a>
+            <a href="#" class="social-link">X</a>
+            <a href="#" class="social-link">DC</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 STRIDE Marketplace Inc. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search Modal & Cart Drawer -->
+  <div class="search-modal-backdrop">
+    <div class="search-modal-box">
+      <div class="search-input-wrap">
+        <input type="text" class="search-input" placeholder="Search by model, brand, or SKU...">
+        <button class="close-search">✕</button>
+      </div>
+      <div class="search-results-list"></div>
+    </div>
+  </div>
+
+  <div class="cart-drawer-backdrop"></div>
+  <aside class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3 style="font-size: 1.15rem; font-weight: 800; text-transform: uppercase;">Your Shopping Bag</h3>
+      <button class="close-cart">✕</button>
+    </div>
+    <div class="cart-drawer-items"></div>
+    <div class="cart-drawer-footer">
+      <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+        <span>Subtotal</span>
+        <span class="cart-drawer-subtotal">$0</span>
+      </div>
+      <a href="cart.html" class="btn btn-primary btn-block">View Bag</a>
+    </div>
+  </aside>
+
+  <!-- Scripts -->
+  <script src="../js/stride-data.js"></script>
+  <script src="../js/stride-core.js"></script>
+
+  <script>
+    function setStep(stepNum) {
+      const steps = [1, 2, 3, 4, 5];
+      const fill = document.getElementById('timeline-progress-fill');
+
+      const percentages = { 1: 0, 2: 25, 3: 50, 4: 75, 5: 100 };
+      fill.style.width = `${percentages[stepNum]}%`;
+
+      steps.forEach(s => {
+        const el = document.getElementById(`step-${s}`);
+        el.classList.remove('completed', 'current');
+        if (s < stepNum) {
+          el.classList.add('completed');
+        } else if (s === stepNum) {
+          el.classList.add('current');
+        }
+      });
+
+      const etaEl = document.getElementById('display-eta');
+      if (stepNum === 5) {
+        etaEl.textContent = 'Delivered & Signed';
+        etaEl.style.color = '#34D399';
+        STRIDE_APP.showToast('Milestone: Order Delivered & Signed!', 'success');
+      } else if (stepNum === 4) {
+        etaEl.textContent = 'Today by 6:00 PM';
+        etaEl.style.color = '#FF5A1F';
+        STRIDE_APP.showToast('Milestone: Courier Out for Delivery', 'info');
+      } else {
+        etaEl.textContent = 'In 2 Business Days';
+        etaEl.style.color = '#FFFFFF';
+        STRIDE_APP.showToast(`Updated to Stage ${stepNum}`, 'info');
+      }
+    }
+
+    document.getElementById('tracking-search-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const code = document.getElementById('tracking-input').value.trim();
+      document.getElementById('display-tracking-code').textContent = code;
+      STRIDE_APP.showToast(`Tracking record loaded for ${code}`, 'success');
+      setStep(4);
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const trackingParam = params.get('tracking');
+      if (trackingParam) {
+        document.getElementById('tracking-input').value = trackingParam;
+        document.getElementById('display-tracking-code').textContent = trackingParam;
+      }
+    });
+  </script>
+</body>
+</html>

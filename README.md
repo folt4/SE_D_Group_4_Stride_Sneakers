@@ -1,166 +1,185 @@
-# STRIDE Sneakers Marketplace 
-### SE_D Group 4 — Software Engineering Project
+# SE_D_Group_4_Stride_Sneakers# STRIDE — Order Management & Shipment Tracking
 
-> A premium dark-mode sneaker resale marketplace built with HTML, CSS & vanilla JavaScript.  
-> Features 100% verified authentic grails, live cart, wishlist, and secure checkout simulation.
-
----
-
-##  Branch Contributor
-
-| Field | Detail |
-|---|---|
-| **Name** | Aazar Khan |
-| **Student ID** | 26i-3197 |
-| **Branch** | `i263197` |
-| **Assigned Pages** | Page 10 — Wishlist · Page 11 — Cart · Page 12 — Checkout |
-| **Course** | Software Engineering (SE_D Group 4) |
-| **Institute** | IICT |
+**Contributor:** Maryam Zafar  
+**Project:** STRIDE — Premium Sneaker Marketplace  
+**Assigned Modules:** Member 13, 14 & 15
 
 ---
 
-##  Project Structure
+## 📌 Project Overview
 
-```
-SE_D_Group_4_Stride_Sneakers/
+This branch of the STRIDE project focuses on the post-purchase customer experience. It includes three essential modules that allow customers to confirm their purchases, review their previous orders, and track their sneaker shipments.
+
+The objective is to provide customers with a transparent, reliable, and user-friendly order management experience.
+
+## 📂 Assigned Modules
+
+### 1. Order Confirmation & Receipt
+**File:** `pages/order-confirmation.html`  
+**Member:** 13
+
+This page displays a successful order confirmation after a customer completes a purchase.
+
+**Main Features:**
+- Celebratory order confirmation screen.
+- Green animated checkmark success indicator.
+- Unique Order ID badge (e.g., `#STR-849102`).
+- Order date and purchase information.
+- Digital receipt with sneaker details.
+- Product size, condition, quantity, and price.
+- Payment method information.
+- Delivery carrier and tracking number.
+- Complete delivery address.
+- Total amount paid.
+- Track Live Shipment button.
+- Continue Shopping button.
+
+**Objective:** Provide customers with a complete digital receipt and confirmation of their successful purchase.
+
+### 2. Order History & Ledger
+**File:** `pages/orders.html`  
+**Member:** 14
+
+This page provides customers with a dashboard containing their previous and active sneaker purchases.
+
+**Main Features:**
+- Customer Vault & Order Ledger heading.
+- Individual order cards.
+- Unique order identification numbers.
+- Order dates and total amounts.
+- Dynamic order status badges:
+  - AUTHENTICATED
+  - IN TRANSIT
+  - DELIVERED
+- Sneaker product thumbnails.
+- Product name and description.
+- Selected shoe size and condition.
+- Quantity and individual product price.
+- Delivery carrier information.
+- Track Delivery button.
+- View Receipt button.
+
+**Objective:** Allow customers to conveniently review their previous transactions and monitor their active orders.
+
+### 3. Live Shipment Tracker
+**File:** `pages/track-order.html`  
+**Member:** 15
+
+This page allows customers to track their sneaker deliveries and follow the authentication and shipping process.
+
+**Main Features:**
+
+**A. Tracking Search**
+- Order ID or tracking number input field.
+- Track Order button.
+- Search functionality for shipment information.
+
+**B. Active Shipment Overview**
+- Order identification number.
+- Delivery carrier name.
+- Tracking code.
+- Delivery destination.
+- Estimated delivery date.
+
+**C. Five-Stage Shipment Tracker**
+
+The tracking system contains five stages:
+
+1. Order Confirmed
+2. Physical Lab Verified
+3. Tamper-Proof Dispatched
+4. In Transit (Carrier)
+5. Delivered to Customer Door
+
+**D. Visual Tracking Timeline**
+- Completed stages display orange checkmarks.
+- Current stage displays a glowing animation.
+- Upcoming stages appear in muted gray.
+- Connected horizontal progress line.
+
+**E. Live Activity Log**
+- Timestamped shipment updates.
+- Delivery location information.
+- Lab inspection updates.
+- Dispatch and shipping activities.
+
+**Objective:** Provide customers with a visual shipment timeline and transparent updates throughout the delivery and authentication process.
+
+---
+
+## 📁 Project File Structure
+
+```text
+STRIDE/
 │
 ├── pages/
-│   ├── wishlist.html         ← Page 10: Saved Grails / Wishlist
-│   ├── cart.html             ← Page 11: Shopping Bag
-│   ├── checkout.html         ← Page 12: Secure Checkout
-│   └── ...                   (other team members' pages)
-│
-├── css/
-│   └── stride.css            ← Shared design system stylesheet
-│
-├── js/
-│   ├── stride-data.js        ← Product catalogue data
-│   ├── stride-core.js        ← App API (cart, wishlist, promo, toast)
-│   └── stride-interactions.js← UI interactions (tilt, modals, drawers)
+│   ├── order-confirmation.html
+│   ├── orders.html
+│   └── track-order.html
 │
 ├── assets/
-│   ├── logo.svg              ← STRIDE wordmark
-│   └── logo-mark.svg         ← STRIDE icon (favicon)
+│   ├── css/
+│   ├── js/
+│   └── images/
 │
-├── docs/
-│   └── ai-logs/26i-3197/
-│       └── iict-ayg-transcript.md  ← Full AI session log
-│
-└── README.md                 ← This file
+└── README.md
 ```
 
-User authentication state is stored in **`localStorage`** (no backend required):
+*Note: The assets structure is illustrative and should match the actual repository.*
 
-| Key | Contents |
-|---|---|
-| `stride_user` | Active user object (`name`, `email`, `role`) |
+## 🔗 Module Navigation
 
-> Pages must be served via HTTP (not opened as `file://`) for assets and `localStorage` to work correctly.
+The three modules are connected to provide a smooth customer journey:
 
----
+1. After completing checkout, the customer reaches the Order Confirmation page.
+2. From the confirmation page, the customer can access Live Shipment Tracking.
+3. Customers can access Order History to review previous purchases.
+4. From Order History, customers can open their receipt or track their delivery.
 
-## Pages Overview (Assigned: 10, 11, 12)
+## 🎨 Design & User Experience
 
-### Page 10 — Wishlist (`pages/wishlist.html`)
-Displays all sneakers the user has saved with the ♥ heart icon.
+The modules follow the STRIDE marketplace's premium sneaker identity.
 
-**Features:**
-- Live count subtitle ("N Saved Pairs")
-- **Move to Bag** — moves individual item from wishlist to cart
-- **Move All to Bag** — bulk move all saved pairs
-- **Clear Wishlist** — empties the wishlist
-- Empty state view with "Explore Catalogue" CTA
-- Currency change reactive (re-renders on `stride:currencychange` event)
+Design principles:
+- Dark-themed interface.
+- Orange accent colors.
+- Clean and modern layouts.
+- Responsive design.
+- Clear status indicators.
+- Interactive buttons and navigation.
+- Animated tracking progress indicators.
 
----
+## 🛠️ Technologies
 
-### Page 11 — Cart (`pages/cart.html`)
-Full shopping bag page — review items before checkout.
+The technologies used should reflect the actual project implementation.
 
-**Features:**
-- Free Shipping progress bar (tracks towards \$200 threshold)
-- Quantity stepper (+/−) per item
-- Remove individual items
-- Promo code input (try `STRIDE10` for 10% off, `FIRSTDROP` for \$50 off)
-- Live order summary: subtotal · shipping · discount · **total**
-- Disabled checkout button when cart is empty
-- Responsive layout (collapses at 768px)
+- HTML5 — Page structure.
+- CSS3 — Styling and responsive layouts.
+- JavaScript — Interactive functionality and tracking updates.
 
----
+## 🎯 Expected Outcome
 
-### Page 12 — Checkout (`pages/checkout.html`)
-Full checkout flow — secured, encrypted simulation.
+The completed modules will provide STRIDE customers with:
 
-**Features:**
-- **Section 1 — Contact Info:** Email (regex validated) + Phone (7+ digit validated)
-- **Section 2 — Delivery Address:** First/Last name, street, apartment, city, state/prov, postal code, country
-- **Section 3 — Courier Dispatch:** Standard FedEx Express (free/\$25) vs STRIDE Armored Overnight (+\$45)
-- **Section 4 — Payment Method:** Credit/Debit Card | Apple Pay / Google Pay | USDC Crypto Vault
-- Live order summary sidebar (sticky, updates on shipping method change)
-- Full form validation with field-level error highlighting + focus on first invalid field
-- On success: saves order to `localStorage`, clears cart, redirects to `order-confirmation.html`
+- Reliable order confirmation.
+- Accessible digital purchase receipts.
+- Organized purchase history.
+- Clear order status information.
+- Visual shipment tracking.
+- Transparent delivery updates.
 
----
+## 👩‍💻 Contributor
 
-##  Data Flow
+**Maryam Zafar**
 
-```
-Shop page → ♥ heart → wishlist.html
-Shop page → Add to Bag → cart drawer → cart.html
-wishlist.html → Move to Bag → cart.html
-cart.html → Proceed to Checkout → checkout.html
-checkout.html → Place Order → order-confirmation.html
-```
+Responsible for developing:
 
-All state is stored in **`localStorage`** (no backend required):
+- Member 13 — Order Confirmation & Receipt.
+- Member 14 — Order History & Ledger.
+- Member 15 — Live Shipment Tracker.
 
-| Key | Contents |
-|---|---|
-| `stride_cart` | Array of cart items |
-| `stride_wishlist` | Array of wishlisted product IDs |
-| `stride_promo_code` | Active promo code object |
-| `stride_orders` | Array of placed orders |
+**Project:** STRIDE — Premium Sneaker Marketplace
 
 ---
 
-
-
->  Pages must be served via HTTP (not opened as `file://`) for `fetch()` and localStorage to work correctly.
-
----
-
-##  Design System
-
-| Token | Value | Usage |
-|---|---|---|
-| Background | `#11131A` / `#171A22` | Page / card backgrounds |
-| Neon Orange | `#FF5A1F` | Primary CTA, prices, accents |
-| Success Green | `#34D399` | Free shipping, positive states |
-| Text Primary | `#FFFFFF` | Headings, prices |
-| Text Secondary | `#A0A4AE` | Labels, descriptions |
-| Border | `#292D38` | Card borders, dividers |
-
-**Fonts:** Display font for headings · Monospace for labels/prices · System sans-serif for body
-
----
-
-##  Promo Codes (Demo)
-
-| Code | Discount |
-|---|---|
-| `STRIDE10` | 10% off subtotal |
-| `FIRSTDROP` | \$50 flat off |
-
----
-
-
----
-
----
-
-
-Stride Member 4 Aazar Khan Pages Designed 10,11,12 | `stride_cart` | Array of cart items |
-| `stride_wishlist` | Array of wishlisted product IDs |
-| `stride_promo_code` | Active promo code object |
-| `stride_orders` | Array of placed orders |
-//    Thanks   //
+*Developed as part of the STRIDE project team.*
