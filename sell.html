@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sell Your Sneakers — STRIDE Consignment Portal</title>
+  <meta name="description" content="Consign your deadstock and pre-owned sneakers on STRIDE. Lowest 9.5% industry fee, live payout calculator, and 24-hour verification.">
+  <link rel="icon" type="image/svg+xml" href="../images/stride-mark.svg">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/sell.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" role="region" aria-label="Promotions">
+    <span><strong>GLOBAL VAULT DROP</strong></span>
+    <span class="announcement-divider" aria-hidden="true">|</span>
+    <span>100% Verified Authentic</span>
+    <span class="announcement-divider" aria-hidden="true">|</span>
+    <span><strong>FREE</strong> Shipping over $200</span>
+  </div>
+
+  <!-- Mobile Top Strip -->
+  <div class="mobile-home-strip">
+    <span>Home Tab</span>
+    <span>Consignment Desk</span>
+  </div>
+
+  <!-- Main Header -->
+  <header class="stride-header">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../index.html" class="brand-logo" aria-label="STRIDE Marketplace Home">
+          <img src="../images/stride-logo.svg" alt="STRIDE" width="150" height="32">
+        </a>
+
+        <nav class="nav-links" aria-label="Primary Navigation">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="shop.html?filter=grail" class="nav-link">Collections <span class="badge-hot">HOT</span></a>
+          <a href="size-guide.html" class="nav-link">Size Guide</a>
+          <a href="sell.html" class="nav-link active" aria-current="page">Sell</a>
+          <a href="about.html" class="nav-link">About</a>
+        </nav>
+
+        <div class="nav-actions">
+          <div class="user-pill" id="header-user-pill" aria-live="polite">
+            <span id="header-user-name"></span>
+            <button type="button" id="header-signout-btn" aria-label="Sign out">Sign out</button>
+          </div>
+          <a href="shop.html" class="icon-btn" aria-label="Search Sneakers">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </a>
+          <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </a>
+          <a href="login.html" class="icon-btn" aria-label="Login or Account">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+          </a>
+          <a href="login.html" class="btn btn-outline btn-sm">Login / SignUp</a>
+          <button type="button" class="icon-btn mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+  <aside class="mobile-nav" id="mobile-nav-drawer" aria-label="Mobile Navigation" aria-hidden="true">
+    <div>
+      <div class="mobile-nav-header">
+        <img src="../images/stride-logo.svg" alt="STRIDE" width="128" height="28">
+        <button type="button" class="mobile-nav-close" id="mobile-nav-close" aria-label="Close navigation menu">✕</button>
+      </div>
+      <nav class="mobile-nav-links" aria-label="Mobile Menu Links">
+        <a href="../index.html" class="mobile-nav-link">Home</a>
+        <a href="shop.html" class="mobile-nav-link">Shop</a>
+        <a href="shop.html?filter=grail" class="mobile-nav-link">Collections</a>
+        <a href="size-guide.html" class="mobile-nav-link">Size Guide</a>
+        <a href="sell.html" class="mobile-nav-link active" aria-current="page">Sell Your Sneakers</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+      </nav>
+    </div>
+    <div>
+      <a href="login.html" class="btn btn-primary btn-block" style="margin-bottom: 0.6rem;">Sign In</a>
+      <a href="signup.html" class="btn btn-outline btn-block">Create Account</a>
+    </div>
+  </aside>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="sell-hero">
+      <div class="container">
+        <div class="sell-hero-inner">
+          <div>
+            <p class="sell-kicker">Sell Your Sneakers / Consignment</p>
+            <h1 class="sell-title">CONSIGN YOUR <span class="text-neon">GRAILS</span></h1>
+            <p class="sell-subtitle">
+              Submit your pair for 8-point physical authentication and list directly to verified collectors worldwide.
+            </p>
+          </div>
+          <span class="badge-pill">9.5% Lowest Industry Fee</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Consignment Form Section -->
+    <section class="sell-main">
+      <div class="container">
+        <div class="sell-wizard-card">
+          <div class="wizard-header">
+            <div>
+              <h2>Consignment Submission Form</h2>
+              <p>Complete your sneaker details and upload at least 2 photos to calculate your instant net payout.</p>
+            </div>
+            <span class="badge-pill">Step 1 of 1</span>
+          </div>
+
+          <form id="sell-form" novalidate>
+            <div class="sell-layout-grid">
+              <!-- Left Column: Sneaker Specifications -->
+              <div class="sell-fields-col">
+                <div class="form-group" id="group-brand">
+                  <label class="form-label" for="sell-brand">Sneaker Brand *</label>
+                  <select id="sell-brand" name="brand" class="form-select" required aria-describedby="brand-error">
+                    <option value="">Select Sneaker Brand</option>
+                    <option value="Air Jordan">Air Jordan</option>
+                    <option value="Nike / Nike SB">Nike / Nike SB</option>
+                    <option value="Travis Scott Collab">Travis Scott Collab</option>
+                    <option value="Adidas Yeezy">Adidas Yeezy</option>
+                    <option value="New Balance">New Balance</option>
+                    <option value="ASICS">ASICS</option>
+                    <option value="Other Verified Brand">Other Verified Brand</option>
+                  </select>
+                  <span class="form-error-msg" id="brand-error" role="alert">Please select a sneaker brand.</span>
+                </div>
+
+                <div class="form-group" id="group-model">
+                  <label class="form-label" for="sell-model">Sneaker Name / Model *</label>
+                  <input type="text" id="sell-model" name="model" class="form-input" placeholder="e.g. Air Jordan 4 Retro Military Black" required aria-describedby="model-error">
+                  <span class="form-error-msg" id="model-error" role="alert">Please enter the sneaker model name.</span>
+                </div>
+
+                <div class="sell-row-2">
+                  <div class="form-group" id="group-size">
+                    <label class="form-label" for="sell-size">Size (US) *</label>
+                    <select id="sell-size" name="size" class="form-select" required aria-describedby="size-error">
+                      <option value="">Select Size</option>
+                      <option value="US 7">US 7</option>
+                      <option value="US 7.5">US 7.5</option>
+                      <option value="US 8">US 8</option>
+                      <option value="US 8.5">US 8.5</option>
+                      <option value="US 9">US 9</option>
+                      <option value="US 9.5">US 9.5</option>
+                      <option value="US 10">US 10</option>
+                      <option value="US 10.5">US 10.5</option>
+                      <option value="US 11">US 11</option>
+                      <option value="US 11.5">US 11.5</option>
+                      <option value="US 12">US 12</option>
+                      <option value="US 13">US 13</option>
+                    </select>
+                    <span class="form-error-msg" id="size-error" role="alert">Please choose a US size.</span>
+                  </div>
+
+                  <div class="form-group" id="group-condition">
+                    <label class="form-label" for="sell-condition">Condition *</label>
+                    <select id="sell-condition" name="condition" class="form-select" required>
+                      <option value="Deadstock">Deadstock (Brand New)</option>
+                      <option value="VNDS 9.5/10">VNDS 9.5/10 (Worn Once)</option>
+                      <option value="Pre-Owned 9/10">Pre-Owned 9/10 (Clean)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <fieldset class="box-radio-fieldset">
+                  <legend class="form-label">Original Box? *</legend>
+                  <div class="box-radio-group">
+                    <label class="box-radio-option">
+                      <input type="radio" name="originalBox" value="Yes" checked>
+                      <span>Yes (Original Box)</span>
+                    </label>
+                    <label class="box-radio-option">
+                      <input type="radio" name="originalBox" value="No">
+                      <span>No (No / Replacement Box)</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <div class="sell-row-2">
+                  <div class="form-group">
+                    <label class="form-label" for="sell-sku">SKU (Optional)</label>
+                    <input type="text" id="sell-sku" name="sku" class="form-input" placeholder="e.g. DH6927-111">
+                  </div>
+
+                  <div class="form-group" id="group-price">
+                    <label class="form-label" for="sell-price">Your Demand ($ USD) *</label>
+                    <div class="price-input-wrap">
+                      <span class="price-prefix" aria-hidden="true">$</span>
+                      <input type="number" id="sell-price" name="price" class="form-input" placeholder="190" min="50" step="1" required aria-describedby="price-error">
+                    </div>
+                    <span class="form-error-msg" id="price-error" role="alert">Enter an asking price of at least $50.</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Column: Live Payout Breakdown & Photo Upload -->
+              <div class="sell-aside-col">
+                <div class="payout-calculation-box" aria-live="polite">
+                  <div class="payout-box-title">
+                    <span>Live Payout Breakdown</span>
+                    <span class="text-neon">USD</span>
+                  </div>
+                  <div class="payout-row">
+                    <span>Gross Listing Price:</span>
+                    <span class="payout-value" id="payout-gross">$0</span>
+                  </div>
+                  <div class="payout-row">
+                    <span>STRIDE Fee (9.5%):</span>
+                    <span class="payout-value muted" id="payout-fee">-$0</span>
+                  </div>
+                  <div class="payout-row">
+                    <span>Lab Processing:</span>
+                    <span class="payout-value muted" id="payout-processing">-$5</span>
+                  </div>
+                  <div class="payout-row highlight">
+                    <span>Estimated Net Payout:</span>
+                    <span class="payout-amount" id="payout-net">$0 USD</span>
+                  </div>
+                </div>
+
+                <div class="form-group" id="group-photos">
+                  <div class="upload-header-row">
+                    <label class="form-label" for="sneaker-file-input">Sneaker Photos (Min 2 Photos) *</label>
+                    <span class="photo-counter" id="photo-counter">0 / 2 minimum</span>
+                  </div>
+
+                  <input type="file" id="sneaker-file-input" class="sr-only" tabindex="-1" multiple accept="image/png,image/jpeg,image/webp">
+                  <div class="image-upload-dropzone" id="upload-dropzone" role="button" tabindex="0" aria-label="Upload sneaker photos by clicking or dragging and dropping files">
+                    <svg class="dropzone-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                      <polyline points="17 8 12 3 7 8"/>
+                      <line x1="12" y1="3" x2="12" y2="15"/>
+                    </svg>
+                    <p class="dropzone-title">Drag or Drop photos here, or Click to Browse</p>
+                    <p class="dropzone-hint">PNG, JPG, or WEBP up to 10MB each (Min 2 photos required)</p>
+                  </div>
+
+                  <div class="upload-actions-row">
+                    <button type="button" class="btn btn-secondary btn-sm" id="load-sample-photos-btn">
+                      Use Sample Sneaker Photos
+                    </button>
+                    <span class="form-error-msg" id="photo-error-msg" role="alert">Please add at least 2 sneaker photos for authentication review.</span>
+                  </div>
+
+                  <div class="upload-preview-grid" id="upload-preview-grid" aria-live="polite"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sell-submit-wrap">
+              <button type="submit" class="btn btn-primary btn-lg btn-block">
+                Submit Sneaker for Consignment
+              </button>
+            </div>
+          </form>
+
+          <!-- Submission Confirmation View -->
+          <div class="sell-confirmation-view" id="sell-confirmation-view" aria-live="polite">
+            <div class="confirm-icon-circle" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <span class="badge-pill">Consignment Submission Accepted</span>
+            <h2 style="margin-top: 0.75rem; font-size: 1.6rem; text-transform: uppercase;">Pair Queued for Authentication</h2>
+            <p style="color: var(--text-secondary); margin-top: 0.4rem;">
+              Your consignment reference code:
+            </p>
+            <div class="confirm-ref-code" id="confirmed-ref-code">#CSG-000000</div>
+
+            <div class="confirm-summary-card">
+              <div id="confirmed-summary-details"></div>
+              <ol>
+                <li>A prepaid insured shipping label has been prepared for your dispatch hub.</li>
+                <li>Double-box your pair with your reference code inside the parcel.</li>
+                <li>Once verified at the STRIDE lab within 24 hours, payout is released automatically.</li>
+              </ol>
+            </div>
+
+            <div class="confirm-actions">
+              <a href="shop.html" class="btn btn-secondary">Return to Shop</a>
+              <button type="button" class="btn btn-outline" id="submit-another-btn">Submit Another Pair</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="stride-footer">
+    <div class="container">
+      <div class="footer-bar">
+        <div class="footer-brand-line">
+          <img src="../images/stride-logo.svg" alt="STRIDE" width="115" height="24">
+          <span>|</span>
+          <span>Market Service Company</span>
+          <span>|</span>
+          <span>&copy; 2026 STRIDE Marketplace</span>
+        </div>
+        <div class="footer-locations" role="group" aria-label="Authentication Hub Locations">
+          <button type="button" class="location-btn active" data-hub="Tokyo">📍 Tokyo</button>
+          <button type="button" class="location-btn" data-hub="London">📍 London</button>
+          <button type="button" class="location-btn" data-hub="Paris">📍 Paris</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/sell.js"></script>
+</body>
+</html>

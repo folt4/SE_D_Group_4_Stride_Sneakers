@@ -1,8 +1,11 @@
 # STRIDE Sneakers Marketplace
-### SE_D Group 4 — Software Engineering / IICT Project
+### SE_D Group 4 — Software Engineering Project
 
-> A premium **Blood Red & Black** dark-luxury sneaker resale marketplace built with HTML5, CSS3, and Vanilla JavaScript.
-> Backed by an 8-Point Physical Inspection Lab, 24/7 VIP Concierge support, and a searchable Buyer Shield FAQ.
+> A premium dark-mode sneaker resale marketplace built with HTML, CSS & vanilla JavaScript.  
+> Features 100% verified authentic grails, collector authentication, and sneaker consignment listings.
+
+**Live Website:** Deployment pending  
+**Google Form:** https://docs.google.com/forms/d/e/1FAIpQLSeMLirbPz1iYlgb12XH_aPzVV4XVN0D3UfRe7r_2Z-6nhw1Fg/viewform?usp=publish-editor
 
 ---
 
@@ -10,69 +13,127 @@
 
 | Field | Detail |
 |---|---|
-| **Name** | Hanniya Rehan |
-| **Student ID** | 26i-3185 |
-| **Branch** | `i263185` |
-| **Assigned Pages** | Page 04 — About Us & Lab · Page 05 — Contact & VIP Concierge · Page 06 — Authentication & FAQ |
-| **Course / Group** | SE_D Group 4 (IICT Project) |
-| **University** | FAST NUCES |
+| **Name** | Danyal Mehdi |
+| **Student ID** | 26I-3195 |
+| **Branch** | `i263195` |
+| **Assigned Pages** | Page 7 — Login · Page 8 — Signup · Page 9 — Sell |
+| **Course** | Software Engineering (SE_D Group 4) |
+| **Institute** | IICT |
 
 ---
 
-## Key Features Implemented (Pages 04, 05 & 06)
-
-### Page 04 — About Us & Verification Lab (`about.html`)
-1. **Brand Story Split Hero & Realistic Sneaker Lab Chamber:** Split editorial layout featuring STRIDE's authenticity mission, key trust stats (`99.98%` lab precision, `42,000+` pairs verified, `4` global hubs), and a detailed Blood Red & Black high-top sneaker illustration with an animated laser scan beam.
-2. **Interactive 8-Point Physical Inspection Lab:** Eight clickable audit modules (*Stereomicroscopy, UV Spectral Stitch, Olfactory Test, Density & Mass, RFID NFC Seal, Box Provenance, Insole Strobel, Laser Alignment*) that dynamically update the live Lab Telemetry readout with calibrated hardware and pass thresholds.
-3. **Global Flagship Hubs Directory:** Four flagship location cards (*Tokyo – Minato-ku, New York – SoHo, London – Covent Garden, Paris – Le Marais*) displaying hours, concierge hotlines, and one-click **Copy Address** buttons with toast notifications.
-4. **Executive Leadership & Vault CTA:** Leadership profile cards and quick-action links to explore the catalog or contact the VIP Concierge.
-
-### Page 05 — Contact Us & VIP Concierge (`contact.html`)
-5. **Vault Contact Column & Copy-to-Clipboard Controls:** Direct emergency concierge number (`+1 (800) 787-4331`), encrypted email (`concierge@stride-marketplace.com`) with copy buttons, SoHo headquarters address, `24/7 VIP Concierge` hours, and social channel pills (*Instagram, Twitter / X, Discord*).
-6. **VIP Concierge Form with Live Validation & Ticket Generation:** Real-time field validation showing green borders for valid entries and red glow + inline error feedback for invalid inputs (Full Name, Email, Department dropdown, `#STR-XXXXXX` Order Reference format, and Message with a live `0 / 600` character counter). Valid submission displays a confirmation screen with a generated `#VIP-XXXXXX` ticket ID.
-7. **Interactive FAQ Shortcuts:** Expandable quick-answer cards covering top customer questions directly below the concierge form, linked to the full Knowledge Base.
-
-### Page 06 — Authentication & Buyer Shield FAQ (`faq.html`)
-8. **Instant Live FAQ Search:** Real-time search input that filters questions as you type, supports `?q=` URL query pre-filling, includes a one-click Clear button, and displays a live matching question counter.
-9. **Category Filter Pills & Expand/Collapse All:** Four category tabs (*All Questions, Buying & Auth, Selling & Payouts, Shipping*) that combine seamlessly with live search, an **Expand All / Collapse All** toggle, and an empty-results fallback CTA linking to `contact.html`.
-10. **Accordion Cards with Blood-Red Highlighting:** Expandable FAQ rows toggling between `[+]` and `[−]` states with a glowing blood-red left border.
-
-### Shared UI Kit & Global Features (`shared.css`, `shared.js`)
-11. **Global Announcement Bar & Persistent Region Selector:** Top announcement ticker with a currency/region selector (`USD`, `EUR`, `GBP`, `JPY`) persisted in `localStorage`.
-12. **Sticky Header, Mobile Drawer & `Ctrl + K` Quick Search Modal:** Responsive navbar with the three-triangle STRIDE SVG logo, mobile navigation drawer, toast notification system, and keyboard-triggered (`Ctrl + K`) quick-search modal.
-
----
-
-## Design System (Blood Red & Black)
-
-| Token | Hex Value | Usage |
-|---|---|---|
-| Primary Black | `#030304` | Page background |
-| Panel Black | `#08080A` | Announcement bar, footer, telemetry panels |
-| Card Black | `#0F0F12` | Feature cards, forms, accordion items |
-| Border Subtle | `#261416` | Card outlines & dividers |
-| Deep Blood Red | `#5C0000` | Gradients & active badge backgrounds |
-| Blood Red Primary | `#8B0000` | Primary buttons, active borders, scan glow |
-| Crimson Text Accent | `#C41E1E` | Eyebrow labels, headings, step numbers |
-| Text Primary / Secondary | `#FFFFFF` / `#9CA3AF` | Headings & body copy |
-
-**Typography:** `Outfit` (Headings) · `Inter` (Body) · `Space Mono` (Technical tags, IDs & labels)
-
----
-
-## Branch Contents (`i263185`)
+## Project Structure (Branch `i263195`)
 
 ```
 SE_D_Group_4_Stride_Sneakers/
-├── Hanniya Rehan - 26i-3185/
-│   └── STRIDE_Chat_Session_Hanniya_Rehan_26i-3185.docx   ← Full AI chat session log
-├── Hanniya Rehan_Page_04_05_06_prototype.jpeg            ← Prototype overview
-├── Page_04_05_06_prototype_review*.jpeg                  ← Prototype review screenshots
-├── faq (1).html
-├── hannyarehan2.js
-├── hannyarehan3.js
-├── order-confirmation.html
-├── shop.html
-├── stride.css
-└── README.md                                             ← Project documentation & features
+│
+├── login.html                                 ← Page 7: Member Login
+├── login.css                                  ← Login page styles
+├── sign in .js                                ← Login validation, demo fill & session logic
+│
+├── signup.html                                ← Page 8: Create Account / Registration
+├── sign up.css                                ← Signup page styles
+├── sign up.js                                 ← Password strength meter & registration logic
+│
+├── sell.html                                  ← Page 9: Sell / Consign Your Grails (prototype/in progress)
+│
+├── Danyal Mehdi Page 7,8,9 Prototype.jpeg     ← Hand-drawn mobile & desktop UI prototype
+├── WhatsApp Image 2026-11-27 at 18.25.08.jpeg ← Prototype showcase photo
+├── WhatsApp Image 2026-11-27 at 18.25.18.jpeg ← Prototype showcase photo
+└── README.md                                  ← This file
 ```
+
+---
+
+## Pages Overview (Assigned: 7, 8, 9)
+
+### Page 7 — Login (`login.html`)
+Member sign-in portal (**ACCESS THE VAULT**) for returning STRIDE collectors.
+
+**Features:**
+- Email address regex validation and minimum 6-character password check with inline error messages
+- **Password Visibility Toggle** (`#toggle-password`) to show or hide the password
+- **Remember This Session** checkbox (`#remember-me`)
+- **Forgot Password** link triggering a toast notification (`STRIDE_APP.showToast`)
+- **One-Click Demo Login** (`#demo-fill-btn`) to populate demo collector credentials (`collector@stride.com` / `stride2026`)
+- Saves authenticated user session (`Alex Vance`, `Verified VIP Collector`) to `localStorage` and redirects to `orders.html`
+
+---
+
+### Page 8 — Signup (`signup.html`)
+Collector registration page (**Create Your STRIDE Identity**) built with Bootstrap 5.3 and custom STRIDE dark-mode styles.
+
+**Features:**
+- Responsive announcement bar, desktop header with live user pill (`#header-user-pill`), and mobile slide-out navigation drawer
+- **Full Name & Email Validation** in a responsive 2-column grid
+- **Dynamic Password Strength Meter** (`#strength-bar` — red / amber / green) with 4-rule checklist (`8+ Characters`, `1 Uppercase`, `1 Number`, `1 Special Symbol`)
+- **Confirm Password** field with match validation and visibility toggles on both password inputs
+- **Terms & Consignment Policy Modal** (`#terms-modal`) covering the 8-point physical authentication inspection (Tokyo, London, Paris hubs), 9.5% consignment fee + $5.00 processing charge, and photo requirements
+- **Confirmation View** (`#signup-success-view`) on submit, storing the member in `localStorage` and linking to `login.html` and `sell.html`
+
+---
+
+### Page 9 — Sell / Consign Your Grails (`sell.html`)
+Sneaker consignment submission page designed for sellers listing pairs on STRIDE (detailed in `Danyal Mehdi Page 7,8,9 Prototype.jpeg`).
+
+**Features:**
+- **Consignment Submission Form:** Sneaker Brand, Sneaker Name/Model, Size (US), Condition grade (e.g., Deadstock), Original Box (`Yes` / `No`), SKU, and Your Demand price
+- **Live Payout Breakdown:** Real-time calculation of Gross Listing Price, STRIDE Fee (`9.5%`), Lab Processing/Authentication fee (`$5`), and Estimated Net Payout
+- **Sneaker Image Upload & Preview:** Drag-and-drop or click-to-browse uploader requiring at least 2 clear photos with live preview thumbnails
+- **Product Form Validation:** Validates sneaker details, pricing, and image requirements before submission
+
+---
+
+## Features Summary
+
+| Feature | Category | Page | Member |
+|---|---|---|---|
+| User Login & Session Persistence | Authentication | Login (`login.html`) | Danyal Mehdi |
+| Remember Me & Demo Login | User Experience | Login (`login.html`) | Danyal Mehdi |
+| Password Visibility Toggle | User Experience | Login & Signup | Danyal Mehdi |
+| User Registration & Strength Meter | Authentication | Signup (`signup.html`) | Danyal Mehdi |
+| Password & Confirm Password Match | Form Validation | Signup (`signup.html`) | Danyal Mehdi |
+| Terms & Consignment Policy Modal | Compliance / UX | Signup (`signup.html`) | Danyal Mehdi |
+| Sneaker Consignment Listing Form | Product Management | Sell (`sell.html`) | Danyal Mehdi |
+| Live Payout Fee Calculator | Pricing | Sell (`sell.html`) | Danyal Mehdi |
+| Sneaker Image Upload & Preview | Image Handling | Sell (`sell.html`) | Danyal Mehdi |
+| Product Form Validation | Form Validation | Sell (`sell.html`) | Danyal Mehdi |
+
+---
+
+## Data Flow & State
+
+```
+signup.html → Create Account → localStorage (stride_user) → login.html / sell.html
+login.html  → Sign In        → localStorage (stride_user) → orders.html
+sell.html   → Consign Grail  → Form validation & live payout calculation → Submit listing
+```
+
+User authentication state is stored in **`localStorage`** (no backend required):
+
+| Key | Contents |
+|---|---|
+| `stride_user` | Active user object (`name`, `email`, `role`) |
+
+> Pages must be served via HTTP (not opened as `file://`) for assets and `localStorage` to work correctly.
+
+---
+
+## Design System
+
+| Token | Value | Usage |
+|---|---|---|
+| Background | `#11131A` / `#171A22` | Page / card backgrounds |
+| Neon Orange | `#FF5A1F` | Primary CTA, highlights, accents |
+| Success Green | `#10B981` / `#34D399` | Strong password & positive states |
+| Text Primary | `#FFFFFF` | Headings, primary text |
+| Text Secondary | `#A0A4AE` | Labels, descriptions |
+| Border | `#292D38` | Card borders, dividers |
+
+---
+
+## Group Member Contribution
+
+| Name | Roll Number | Pages Built | Features Built |
+|---|---|---|---|
+| Danyal Mehdi | `26I-3195` | Page 7 (Login), Page 8 (Signup), Page 9 (Sell) | User registration, password strength meter, login, form validation, password visibility, demo login, sneaker consignment listing, live payout calculator, and image upload/preview |
