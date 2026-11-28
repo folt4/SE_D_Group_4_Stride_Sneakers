@@ -1,4 +1,4 @@
-# STRIDE Sneakers Marketplace 👟
+# STRIDE Sneakers Marketplace 
 ### SE_D Group 4 — Software Engineering Project
 
 > A premium dark-mode sneaker resale marketplace built with HTML, CSS & vanilla JavaScript.  
@@ -6,7 +6,7 @@
 
 ---
 
-## 👤 Branch Contributor
+##  Branch Contributor
 
 | Field | Detail |
 |---|---|
@@ -19,7 +19,7 @@
 
 ---
 
-## 🗂️ Project Structure
+##  Project Structure
 
 ```
 SE_D_Group_4_Stride_Sneakers/
@@ -51,7 +51,7 @@ SE_D_Group_4_Stride_Sneakers/
 
 ---
 
-## 📄 Pages Overview (Assigned: 10, 11, 12)
+## Pages Overview (Assigned: 10, 11, 12)
 
 ### Page 10 — Wishlist (`pages/wishlist.html`)
 Displays all sneakers the user has saved with the ♥ heart icon.
@@ -94,7 +94,7 @@ Full checkout flow — secured, encrypted simulation.
 
 ---
 
-## 🔗 Data Flow
+##  Data Flow
 
 ```
 Shop page → ♥ heart → wishlist.html
@@ -117,11 +117,11 @@ All state is stored in **`localStorage`** (no backend required):
 
 
 
-> ⚠️ Pages must be served via HTTP (not opened as `file://`) for `fetch()` and localStorage to work correctly.
+>  Pages must be served via HTTP (not opened as `file://`) for `fetch()` and localStorage to work correctly.
 
 ---
 
-## 🎨 Design System
+##  Design System
 
 | Token | Value | Usage |
 |---|---|---|
@@ -136,7 +136,7 @@ All state is stored in **`localStorage`** (no backend required):
 
 ---
 
-## 🧪 Promo Codes (Demo)
+##  Promo Codes (Demo)
 
 | Code | Discount |
 |---|---|
