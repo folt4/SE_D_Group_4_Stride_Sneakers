@@ -1,39 +1,78 @@
-# STRIDE — Sneaker Resale Marketplace
+# STRIDE Sneakers Marketplace
+### SE_D Group 4 — Software Engineering / IICT Project
 
-**STRIDE** (*Be Your Own • Define Your Movement*) is a sneaker resale and consignment storefront built with semantic HTML5, modular CSS3, and vanilla JavaScript[cite: 2, 4, 5, 6]. It pairs a dark neon-accented visual identity with interactive product rendering, client-side form validation, and multi-page navigation across brand and concierge views[cite: 1, 2, 3, 4, 5, 6].
-
----
-
-## Key Features
-
-1. **3D Hero Showcase & Particle Stage:** Features an interactive floating hero sneaker with CSS keyframe motion, perspective lighting, a glowing backdrop orb, a particle canvas layer, and floating condition and market-value badges[cite: 4, 5].
-2. **Dynamic Featured & Trending Carousels/Grids:** Dynamically renders featured and trending sneaker cards from `STRIDE_DATA` into `#featured-products-grid` and `#trending-products-grid`, complete with condition/grail badges, verification tags, quick-view triggers, and detail links[cite: 4, 6].
-3. **Live Currency Conversion Support:** Formats resale and hero prices via `STRIDE_APP.formatPrice()` and listens for `stride:currencychange` events to re-render displayed prices automatically[cite: 4, 6].
-4. **Wishlist Toggling & 3D Card Tilt:** Lets users toggle items on their wishlist (`STRIDE_APP.toggleWishlist()`) with active state styling and initializes 3D card tilt interactions on newly rendered product cards[cite: 4, 6].
-5. **VIP Concierge Dispatch Form & Validation:** Validates full name, email format, and a minimum 15-character message on `#contact-form`, revealing a confirmation state (`#contact-success`) with reference `#CNG-99214` and triggering a toast notification on valid submission[cite: 1, 3].
-6. **Global Navigation, Search Modal & Slide-Out Bag Drawer:** Provides desktop navigation, a slide-out mobile drawer, a search modal (`Ctrl+K`), a free-shipping progress bar, and a slide-out shopping bag drawer across pages[cite: 2, 3, 4].
+> A premium **Blood Red & Black** dark-luxury sneaker resale marketplace built with HTML5, CSS3, and Vanilla JavaScript.
+> Backed by an 8-Point Physical Inspection Lab, 24/7 VIP Concierge support, and a searchable Buyer Shield FAQ.
 
 ---
 
-## Project Structure & Provided Files
+## Branch Contributor
 
-* `index.html` — Landing page with announcement bar, navigation, 3D hero section, brand pillars, featured/trending drops, consignment banner, VIP newsletter form, search modal, and cart drawer[cite: 4].
-* `pages/about.html` — Brand story, marketplace metrics, four core pillars, and global authentication hubs (Tokyo, New York, London, Paris)[cite: 2].
-* `pages/contact.html` — VIP Client Concierge page with direct support channels, quick help links, and dispatch form[cite: 3].
-* `css/stride.css` & `Shan1.css` — Core and page-specific styles, including hero layout, 3D sneaker stage animations, floating badges, and dark/neon theme variables[cite: 2, 3, 4, 5].
-* `js/stride-data.js`, `js/stride-core.js`, `js/stride-interactions.js`, `shan1.js`, & `shan2.js` — Product data, app state/currency/wishlist helpers, interactive UI behaviors, home product renderer, and contact form validation logic[cite: 1, 2, 3, 4, 6].
-
----
-
-## Getting Started
-
-1. Place all HTML, CSS, JS, and asset files (`assets/logo.svg`, `assets/logo-mark.svg`) in their respective folders (`index.html` at the root, `pages/` for subpages, `css/` for stylesheets, and `js/` for scripts)[cite: 2, 3, 4].
-2. Open `index.html` in a modern web browser (or serve the folder with a local static server such as VS Code Live Server).
-3. Navigate to `pages/about.html` or `pages/contact.html` from the header, footer, or mobile drawer to explore brand hubs and test the VIP concierge form[cite: 2, 3].
+| Field | Detail |
+|---|---|
+| **Name** | Hanniya Rehan |
+| **Student ID** | 26i-3185 |
+| **Branch** | `i263185` |
+| **Assigned Pages** | Page 04 — About Us & Lab · Page 05 — Contact & VIP Concierge · Page 06 — Authentication & FAQ |
+| **Course / Group** | SE_D Group 4 (IICT Project) |
+| **University** | FAST NUCES |
 
 ---
 
-## Notes
+## Key Features Implemented (Pages 04, 05 & 06)
 
-* Contact form validation and confirmation currently run client-side and display a simulated reference ID (`#CNG-99214`) upon successful submission[cite: 1, 3].
-* Product listings, wishlist state, currency formatting, and cart drawer updates rely on `STRIDE_DATA`, `STRIDE_APP`, and `STRIDE_INTERACTIONS`[cite: 4, 6].
+### Page 04 — About Us & Verification Lab (`about.html`)
+1. **Brand Story Split Hero & Realistic Sneaker Lab Chamber:** Split editorial layout featuring STRIDE's authenticity mission, key trust stats (`99.98%` lab precision, `42,000+` pairs verified, `4` global hubs), and a detailed Blood Red & Black high-top sneaker illustration with an animated laser scan beam.
+2. **Interactive 8-Point Physical Inspection Lab:** Eight clickable audit modules (*Stereomicroscopy, UV Spectral Stitch, Olfactory Test, Density & Mass, RFID NFC Seal, Box Provenance, Insole Strobel, Laser Alignment*) that dynamically update the live Lab Telemetry readout with calibrated hardware and pass thresholds.
+3. **Global Flagship Hubs Directory:** Four flagship location cards (*Tokyo – Minato-ku, New York – SoHo, London – Covent Garden, Paris – Le Marais*) displaying hours, concierge hotlines, and one-click **Copy Address** buttons with toast notifications.
+4. **Executive Leadership & Vault CTA:** Leadership profile cards and quick-action links to explore the catalog or contact the VIP Concierge.
+
+### Page 05 — Contact Us & VIP Concierge (`contact.html`)
+5. **Vault Contact Column & Copy-to-Clipboard Controls:** Direct emergency concierge number (`+1 (800) 787-4331`), encrypted email (`concierge@stride-marketplace.com`) with copy buttons, SoHo headquarters address, `24/7 VIP Concierge` hours, and social channel pills (*Instagram, Twitter / X, Discord*).
+6. **VIP Concierge Form with Live Validation & Ticket Generation:** Real-time field validation showing green borders for valid entries and red glow + inline error feedback for invalid inputs (Full Name, Email, Department dropdown, `#STR-XXXXXX` Order Reference format, and Message with a live `0 / 600` character counter). Valid submission displays a confirmation screen with a generated `#VIP-XXXXXX` ticket ID.
+7. **Interactive FAQ Shortcuts:** Expandable quick-answer cards covering top customer questions directly below the concierge form, linked to the full Knowledge Base.
+
+### Page 06 — Authentication & Buyer Shield FAQ (`faq.html`)
+8. **Instant Live FAQ Search:** Real-time search input that filters questions as you type, supports `?q=` URL query pre-filling, includes a one-click Clear button, and displays a live matching question counter.
+9. **Category Filter Pills & Expand/Collapse All:** Four category tabs (*All Questions, Buying & Auth, Selling & Payouts, Shipping*) that combine seamlessly with live search, an **Expand All / Collapse All** toggle, and an empty-results fallback CTA linking to `contact.html`.
+10. **Accordion Cards with Blood-Red Highlighting:** Expandable FAQ rows toggling between `[+]` and `[−]` states with a glowing blood-red left border.
+
+### Shared UI Kit & Global Features (`shared.css`, `shared.js`)
+11. **Global Announcement Bar & Persistent Region Selector:** Top announcement ticker with a currency/region selector (`USD`, `EUR`, `GBP`, `JPY`) persisted in `localStorage`.
+12. **Sticky Header, Mobile Drawer & `Ctrl + K` Quick Search Modal:** Responsive navbar with the three-triangle STRIDE SVG logo, mobile navigation drawer, toast notification system, and keyboard-triggered (`Ctrl + K`) quick-search modal.
+
+---
+
+## Design System (Blood Red & Black)
+
+| Token | Hex Value | Usage |
+|---|---|---|
+| Primary Black | `#030304` | Page background |
+| Panel Black | `#08080A` | Announcement bar, footer, telemetry panels |
+| Card Black | `#0F0F12` | Feature cards, forms, accordion items |
+| Border Subtle | `#261416` | Card outlines & dividers |
+| Deep Blood Red | `#5C0000` | Gradients & active badge backgrounds |
+| Blood Red Primary | `#8B0000` | Primary buttons, active borders, scan glow |
+| Crimson Text Accent | `#C41E1E` | Eyebrow labels, headings, step numbers |
+| Text Primary / Secondary | `#FFFFFF` / `#9CA3AF` | Headings & body copy |
+
+**Typography:** `Outfit` (Headings) · `Inter` (Body) · `Space Mono` (Technical tags, IDs & labels)
+
+---
+
+## Branch Contents (`i263185`)
+
+```
+SE_D_Group_4_Stride_Sneakers/
+├── Hanniya Rehan - 26i-3185/
+│   └── STRIDE_Chat_Session_Hanniya_Rehan_26i-3185.docx   ← Full AI chat session log
+├── Hanniya Rehan_Page_04_05_06_prototype.jpeg            ← Prototype overview
+├── Page_04_05_06_prototype_review*.jpeg                  ← Prototype review screenshots
+├── faq (1).html
+├── hannyarehan2.js
+├── hannyarehan3.js
+├── order-confirmation.html
+├── shop.html
+├── stride.css
+└── README.md                                             ← Project documentation & features
+```
