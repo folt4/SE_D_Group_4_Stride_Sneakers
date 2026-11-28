@@ -12,8 +12,7 @@
 - **Section & Group:** Section **SE-D** | Group **04**
 - **Live Website:** https://folt4.github.io/SE_D_Group_4_Stride_Sneakers/
 - **GitHub Repository:** https://github.com/folt4/SE_D_Group_4_Stride_Sneakers
-- **Google Form:** https://docs.google.com/forms/d/e/1FAIpQLSeMLirbPz1iYlgb12XH_aPzVV4XVN0D3UfRe7r_2Z-6nhw1Fg/viewform
-
+- **Google Form:** https://docs.google.com/forms/d/e/1FAIpQLSeMLirbPz1iYlgb12XH_aPzVV4XVN0D3UfRe7r_2Z-6nhw1Fg/viewform?usp=dialog
 ---
 
 ## Key Website Features
